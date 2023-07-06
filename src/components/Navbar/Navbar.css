@@ -7,8 +7,9 @@
     padding: 20px;
     background-color: var(--color-02);
     height: calc(100% - 40px);
+    box-shadow: 4px 0px 4px black;
 
-    margin-left: -182px;
+    margin-left: -180px;
     transition: margin-left 0.15s ease;
 }
 
@@ -79,6 +80,7 @@
     padding: 10px 15px;
     border-radius: 99px;
     background-color: var(--color-03);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
     opacity: 0%;
 
     transition: opacity 0.15s ease;
@@ -91,4 +93,16 @@
 
 .navbar.active .navbar__footer{
     opacity: 100%;
+}
+
+
+/* THEME CHANGES =============================== */
+
+.app.light .navbar{
+    background-color: white;
+    color: black;
+}
+
+.app.light .navbar__footer{
+    color: white;
 }

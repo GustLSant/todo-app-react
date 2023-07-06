@@ -1,0 +1,11 @@
+@import url('../App.css');
+
+.day-of-week{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tasks-container{
+
+}

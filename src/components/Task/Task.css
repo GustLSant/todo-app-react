@@ -1,0 +1,36 @@
+@import url('../../index.css');
+
+.task{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    height: fit-content;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: var(--color-03);
+    box-shadow: 4px 4px 4px black;
+    text-align: justify;
+}
+
+.task__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.task__done-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.task__done-button:hover{
+    cursor: pointer;
+    color: var(--color-04);
+}
+
+.task__body{
+    font-size: 0.9em;
+}

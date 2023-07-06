@@ -43,7 +43,7 @@ function Navbar(props) {
                 <IoMenu size={'36px'} className='navbar__button-toggle' onClick={handleClickToggleNavBar} />
             </div>
 
-            <div className="navbar__main">
+            <nav className="navbar__main">
                 {
                     daysWeek.map((day, key) => {
                         const isActive = dayState === day
@@ -57,7 +57,7 @@ function Navbar(props) {
                         )
                     })
                 }
-            </div>
+            </nav>
 
             <div style={{flexGrow: '1'}}></div>
 
