@@ -7,6 +7,13 @@
     padding: 20px;
     background-color: var(--color-02);
     height: calc(100% - 40px);
+
+    margin-left: -182px;
+    transition: margin-left 0.15s ease;
+}
+
+.navbar.active{
+    margin-left: 0px;
 }
 
 .navbar__header{
@@ -77,7 +84,7 @@
     transition: opacity 0.15s ease;
 }
 
-.navbar__footer:hover{
+.navbar.active .navbar__footer:hover{
     cursor: pointer;
     color: var(--color-04);
 }

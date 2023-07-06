@@ -1,9 +1,10 @@
 import './Navbar.css'
 import React from 'react'
 import { IoListCircle, IoMenu, IoBulb, IoBulbOutline } from "react-icons/io5"
+import PropTypes from 'prop-types';
 
 
-function Navbar() {
+function Navbar(props) {
 
     const [active, setActive] = React.useState(true)
     const [dayState, setDayState] = React.useState('')
@@ -25,12 +26,18 @@ function Navbar() {
         setActive(!active)
     }
 
+    function handleClickTheme(){
+        if(active){
+            props.changeTheme()
+        }
+    }
+
 
     return (
         <div className={(active) ? "navbar active" : "navbar"}>
             <div className="navbar__header">
                 <div className='navbar-header__logo'>
-                    <IoListCircle size={'36px'} style={{transform: 'rotate(-10deg)'}} />
+                    <IoListCircle size={'36px'} style={{transform: 'rotate(-0deg)'}} />
                     ToDo App
                 </div>
                 <IoMenu size={'36px'} className='navbar__button-toggle' onClick={handleClickToggleNavBar} />
@@ -55,9 +62,9 @@ function Navbar() {
             <div style={{flexGrow: '1'}}></div>
 
             
-            <div className="navbar__footer">
+            <div className="navbar__footer" onClick={handleClickTheme} >
                 {
-                    (true) ? 
+                    (props.theme === 'dark') ? 
                     <IoBulb size={'20px'} /> : 
                     <IoBulbOutline size={'20px'} />
                 }
@@ -65,6 +72,11 @@ function Navbar() {
             </div>
         </div>
     );
+}
+
+Navbar.propTypes = {
+    theme: PropTypes.string,
+    changeTheme: PropTypes.func
 }
 
 export default Navbar;
