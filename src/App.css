@@ -1,0 +1,7 @@
+@import url('./index.css');
+
+.app{
+  display: flex;
+  background-color: var(--color-01);
+  height: 100vh;
+}

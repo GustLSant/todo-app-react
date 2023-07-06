@@ -1,0 +1,87 @@
+@import url('../../App.css');
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    background-color: var(--color-02);
+    height: calc(100% - 40px);
+}
+
+.navbar__header{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar-header__logo{
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--color-05);
+}
+
+.navbar__button-toggle:hover{
+    cursor: pointer;
+    color: var(--color-04);
+}
+
+.navbar__main{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar__day-container{
+    display: flex;
+    gap: 0px;
+    padding: 10px;
+    font-size: 1.2em;
+    
+    transition: gap 0.15s ease;
+}
+
+.navbar__day-container:hover{
+    color: var(--color-04);
+    cursor: pointer;
+}
+
+.navbar__day-container.active{
+    color: var(--color-05);
+    font-weight: 700;
+    gap: 10px;
+}
+
+.day-week__bar{
+    background-color: var(--color-05);
+    width: 0px;
+
+    transition: width 0.15s ease;
+}
+
+.navbar__day-container.active .day-week__bar{
+    width: 5px;
+}
+
+.navbar__footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 15px;
+    border-radius: 99px;
+    background-color: var(--color-03);
+    opacity: 0%;
+
+    transition: opacity 0.15s ease;
+}
+
+.navbar__footer:hover{
+    cursor: pointer;
+    color: var(--color-04);
+}
+
+.navbar.active .navbar__footer{
+    opacity: 100%;
+}

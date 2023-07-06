@@ -1,0 +1,17 @@
+:root {
+  --color-01: #08090B; /* background */
+  --color-02: #0E1215; /* navbar */
+  --color-03: #1B1C1E; /* tasks */
+  --color-04: #ffdaae; /* highlight 1 */
+  --color-05: #FFB661; /* highlight 2 */
+  --color-06: #88DFF0; /* highlight 3 */
+
+  color: white;
+  font-family: sans-serif;
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
