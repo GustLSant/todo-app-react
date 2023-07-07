@@ -5,7 +5,8 @@
   --color-04: #ffdaae; /* highlight 1 */
   --color-05: #FFB661; /* highlight 2 */
   --color-06: #88DFF0; /* highlight 3 */
-
+  --color-07: #30343a; /* taks highlight */
+  
   color: white;
   font-family: sans-serif;
 }

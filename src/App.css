@@ -19,10 +19,15 @@ main{
 .add-task-button{
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
   padding: 10px 20px 10px 15px;
   border-radius: 99px;
   background-color: var(--color-03);
   box-shadow: 4px 4px 4px black;
   font-size: 1.15em;
+}
+
+.add-task-button:hover{
+  color: var(--color-04);
+  cursor: pointer;
 }

@@ -1,6 +1,7 @@
 @import url('../../index.css');
 
 .task{
+    position: relative; /* para a seta para baixo funcionar */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -11,6 +12,10 @@
     background-color: var(--color-03);
     box-shadow: 4px 4px 4px black;
     text-align: justify;
+
+    overflow-y: hidden;
+    max-height: 125px;
+    transition: max-height 0.15s ease
 }
 
 .task__header{
@@ -33,4 +38,62 @@
 
 .task__body{
     font-size: 0.9em;
+}
+
+.task__footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    max-height: 0px;
+    overflow-y: hidden;
+
+    transition: max-height 0.15s ease;
+}
+
+.task__footer > div{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 5px 15px 5px 10px;
+    border-radius: 99px;
+    background-color: var(--color-07);
+}
+.task__footer > div:hover{
+    cursor: pointer;
+    color: var(--color-04);
+}
+
+.task__content-cover{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    top: calc(15px + 30px); /* 15px do padding mais 30px do icone */
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 15px;
+    background-image: linear-gradient(to bottom, transparent, #1b1c1ed0, var(--color-02));
+    pointer-events: none;
+
+    transition: opacity 0.15s ease;
+}
+
+.task__content-cover:hover{
+    color: var(--color-04);
+}
+
+
+/* efeitos de expansao quando o mouse entra na tarefa */
+
+.task:hover{
+    max-height: 999px;
+}
+.task:hover .task__content-cover{
+    opacity: 0%;
+}
+.task:hover .task__footer{
+    max-height: 80px;
 }

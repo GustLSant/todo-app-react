@@ -1,7 +1,8 @@
 import React from 'react'
 import './Task.css'
 import PropTypes from 'prop-types'
-import { IoCheckmarkCircle, IoCheckmarkCircleOutline } from 'react-icons/io5'
+import { IoCheckmarkCircle, IoCheckmarkCircleOutline, IoChevronDown, IoCloseCircleOutline, IoOptions } from 'react-icons/io5'
+import { HiPencilAlt } from 'react-icons/hi'
 
 function Task(props) {
     const [done, setDone] = React.useState(props.done)
@@ -29,7 +30,19 @@ function Task(props) {
             </div>
 
             <div className="task__footer">
+                <div>
+                    <IoOptions size={'22px'} />
+                    Edit
+                </div>
+                <div>
+                    <IoCloseCircleOutline size={'24px'} />
+                    Delete
+                </div>
+            </div>
 
+            <div className="task__content-cover">
+                Expandir
+                <IoChevronDown size={'30px'} />
             </div>
         </div>
     );
