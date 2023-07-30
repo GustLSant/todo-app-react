@@ -31,3 +31,7 @@ main{
   color: var(--color-04);
   cursor: pointer;
 }
+
+textarea:enabled{
+  color: white;
+}

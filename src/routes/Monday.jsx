@@ -1,29 +1,34 @@
 import React from 'react'
 import './DayOfWeek.css'
-import Task from '../components/Task/Task'
+import { TasksContext } from '../contexts/TasksContext'
+import SuperTask from '../components/SuperTask/SuperTask'
+
+//RFS:
+// adicionar super task
+// editar titulo da super task
+// mudar 'done' da super task qnd todas as step tasks tiverem concluidas
+// deletar super task
+// adicionar step task da super task
+// editar step task
+// mudar 'done' da step task
+// deletar step task
+
+
 
 
 
 function Monday() {
-
-    const tasks = [
-        {
-            id: 1,
-            done: false,
-            title: 'Title',
-            body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque deserunt id accusantium numquam vitae? Beatae voluptates nesciunt tempore ratione eligendi? Perferendis earum accusantium optio culpa debitis, perspiciatis quibusdam pariatur unde!',
-        }
-    ]
-
+    const {tasks} = React.useContext(TasksContext)
+    
     return (
         <div className='day-of-week'>
-            <h2>Monday</h2>
-            
+            <h2 onClick={()=>{console.log(tasks)}}>Monday</h2>
+
             <div className="tasks-container">
                 {
                     tasks.map(task => {
                         return(
-                            <Task key={task.id} done={task.done} title={task.title} body={task.body} />
+                            <SuperTask key={task.id} id={task.id} done={task.done} title={task.title} stepTasks={task.stepTasks} />
                         )
                     })
                 }

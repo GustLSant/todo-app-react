@@ -1,12 +1,12 @@
 import React from 'react'
 import './App.css'
+import { TasksProvider } from './contexts/TasksContext'
+import ButtonAddTask from './components/ButtonAddTask/ButtonAddTask'
 import Navbar from './components/Navbar/Navbar'
 import Monday from './routes/Monday'
-import { IoAddCircle } from 'react-icons/io5'
 
 
 function App() {
-
   const [theme, setTheme] = React.useState('dark')
 
   function changeTheme(){
@@ -20,12 +20,10 @@ function App() {
       <Navbar theme={theme} changeTheme={changeTheme} />
       
       <main>
-        <div className="add-task-button">
-          <IoAddCircle size={'28px'} />
-          <p>Add Task</p>
-        </div>
-
-        <Monday />
+        <TasksProvider>
+          <ButtonAddTask />
+          <Monday />
+        </TasksProvider>
       </main>
     </div>
   )
