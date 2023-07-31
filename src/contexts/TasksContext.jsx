@@ -2,6 +2,8 @@ import React from "react"
 
 export const TasksContext = React.createContext()
 
+let id = 0
+
 export const TasksProvider = ({children}) => {
     const [tasks, setTasks] = React.useState(
         [
@@ -74,11 +76,11 @@ export const TasksProvider = ({children}) => {
         ]
     )
     
-    
     function getUniqueID(){
-        return parseInt(`${Math.floor(Math.random() * 90) + 10}` + `${new Date().getTime()}`)
+        id++
+        return id
+        // return parseInt(`${Math.floor(Math.random() * 90) + 10}` + `${new Date().getTime()}`)
     }
-
 
     return(
         <TasksContext.Provider value={{tasks, setTasks, getUniqueID}}>

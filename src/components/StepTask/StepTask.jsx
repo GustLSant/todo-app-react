@@ -1,31 +1,61 @@
 import React from "react";
 import PropTypes from 'prop-types'
-import { IoCheckmarkCircle, IoCheckmarkCircleOutline } from 'react-icons/io5'
+import { IoCheckmarkCircle, IoCheckmarkCircleOutline, IoCloseCircle, IoCloseCircleOutline } from 'react-icons/io5'
 
 
-
-function StepTask(props) {
-    let body = props.body
-
+function StepTask(props){
+    
     function handleBodyChange(e){
-        body = e.target.value
-        console.log(props.id)
-        props.handleChange(
-            {
-                id: props.id,
-                done: props.done,
-                body: body,
+        const newStepTasks = JSON.parse(JSON.stringify(props.stepTasks)); // deep copy
+        
+        newStepTasks.forEach(element => {
+            if(element.id === props.id){
+                element.body = e.target.value //ta fazendo essa alteracao no tasks sem nem mesmo chamar o setTasks
             }
-        )
+        })
+
+        props.setStepTasks(newStepTasks)
+    }
+    
+
+    function handleClickDelete(){
+        const newStepTasks = []
+        
+        props.stepTasks.forEach(element => {
+            if(element.id !== props.id){
+                newStepTasks.push(element)
+            }
+        })
+
+        props.setStepTasks(newStepTasks)
     }
 
-    return (
+
+    function handleToggleDone(){
+        const newStepTasks = [...props.stepTasks]
+        
+        props.stepTasks.forEach(element => {
+            if(element.id === props.id){
+                element.done = !props.done
+            }
+        })
+        
+        props.setStepTasks(newStepTasks)
+        props.saveData()
+    }
+
+
+    return(
         <div className="step-task">
-            <textarea value={body} onChange={(e) => {handleBodyChange(e)}} disabled={!props.isEditing} rows={1} />
+            <textarea value={props.body} onChange={(e)=>{handleBodyChange(e)}} disabled={!props.isEditing} rows={1} />
             {
-                (props.done) ?
-                <IoCheckmarkCircle        size={'30px'} /> :
-                <IoCheckmarkCircleOutline size={'30px'} />
+                (props.isEditing) ?
+                <IoCloseCircleOutline size={'30px'} onClick={handleClickDelete} /> :
+                [
+                    (props.done) ?
+                    <IoCheckmarkCircle        key={0} size={'30px'} onClick={handleToggleDone} /> :
+                    <IoCheckmarkCircleOutline key={1} size={'30px'} onClick={handleToggleDone} />
+                ]
             }
         </div>
     );
@@ -36,7 +66,9 @@ StepTask.propTypes = {
     done: PropTypes.bool,
     body: PropTypes.string,
     isEditing: PropTypes.bool,
-    handleChange: PropTypes.func,
+    stepTasks: PropTypes.array,
+    setStepTasks: PropTypes.func,
+    saveData: PropTypes.func,
 }
 
 export default StepTask;

@@ -5,16 +5,16 @@ import "../Button01/Button01.css";
 import { IoAddCircle } from 'react-icons/io5'
 
 function ButtonAddTask() {
-    const {tasks, setTasks} = React.useContext(TasksContext)
+    const {tasks, setTasks, getUniqueID} = React.useContext(TasksContext)
 
     function handleClick(){
         let newTasks = [...tasks]
-        const nextId = newTasks.length
+        const nextId = getUniqueID()
         newTasks.push(
         {
             id: nextId,
             done: false,
-            title: 'New Task ' + (nextId + 1),
+            title: 'New Task',
             stepTasks: []
         }
         )

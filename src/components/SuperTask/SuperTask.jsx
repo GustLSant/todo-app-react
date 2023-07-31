@@ -42,14 +42,12 @@ function SuperTask(props) {
 
 
     function handleClickAddStepTask(){
-        const newID = getUniqueID()
-
-        let newStepTasks = [
+        const newStepTasks = [
             ...stepTasks,
             {
-                id: newID,
+                id: getUniqueID(),
                 done: false,
-                body: 'step task ' + newID
+                body: 'step task'
             }
         ]
 
@@ -62,7 +60,7 @@ function SuperTask(props) {
             setDeleteButtonText('Confirm Delete') // para evitar erros do usuario
         }
         else{
-            let newTasks = []
+            const newTasks = []
             
             tasks.forEach(element => {
                 if(element.id === id){
@@ -78,28 +76,28 @@ function SuperTask(props) {
     }
 
 
-    // depreciada
     function saveData(){
-        let newTasks = [
-            ...tasks
-        ]
-        newTasks[id] = {
-            id,
-            done,
-            title,
-            stepTasks
-        }
+        const newTasks = [...tasks]
+
+        tasks.forEach(element => {
+            if(element.id === id){
+                element.done = done
+                element.title = title
+                element.stepTasks = stepTasks
+            }
+        })
+
         setTasks(newTasks)
     }
 
-    // pra quando clicar no botao Done ou adicionar outra stepTask, salvar as alteracoes
+    // pra quando clicar no botao Done salvar as alteracoes
     React.useEffect(() => {
         saveData()
     }, [done])
-    
+
 
     return (
-        <div className="super-task" onClick={()=>{console.log(title, id)}}>
+        <div className="super-task">
             <div className="super-task__header">
                 <div className="super-task-header__title-container">
                     <textarea value={title} onChange={(e) => {setTitle(e.target.value)}} disabled={!isEditing} rows={1} />
@@ -110,7 +108,6 @@ function SuperTask(props) {
                     }
                 </div>
                 <div className="super-task-header__buttons-container">
-                
                     {
                         (!isEditing) ? 
                         [
@@ -124,7 +121,6 @@ function SuperTask(props) {
                             <Button01 key={3} label='Cancel changes' icon={<IoCheckmarkCircle size={'25px'} />} size={'1.05em'} onClick={handleClickCancelChanges} />
                         ]
                     }
-                    
                 </div>
             </div>
 
@@ -133,7 +129,7 @@ function SuperTask(props) {
                     {
                         stepTasks.map((st, key) => {
                             return(
-                                <StepTask key={key} id={st.id} done={st.done} body={st.body} isEditing={isEditing} />
+                                <StepTask key={key} id={st.id} done={st.done} body={st.body} isEditing={isEditing} stepTasks={stepTasks} setStepTasks={setStepTasks} saveData={saveData} />
                             )
                         })
                     }
