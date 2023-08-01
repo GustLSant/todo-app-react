@@ -1,0 +1,46 @@
+@import url('../../index.css');
+
+.super-task{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 300px;
+    min-width: 200px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: var(--color-02);
+    box-shadow: 4px 4px 4px black;
+}
+
+
+
+.super-task__header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.super-task-header__title-container{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.super-task-header__buttons-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.super-task textarea{
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--color-07);
+    font-family: serif;
+    font-size: 1.0em;
+}
+.super-task textarea:disabled{
+    color: rgba(255,255,255, 0.7);
+}
+.super-task textarea:enabled{
+    border-bottom: 1px solid white;
+}

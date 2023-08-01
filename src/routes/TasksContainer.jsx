@@ -1,7 +1,8 @@
 import React from 'react'
-import './DayOfWeek.css'
+import './TasksContainer.css'
 import { TasksContext } from '../contexts/TasksContext'
 import SuperTask from '../components/SuperTask/SuperTask'
+import PropTypes from 'prop-types'
 
 //RFS:
 // adicionar super task
@@ -15,16 +16,14 @@ import SuperTask from '../components/SuperTask/SuperTask'
 
 
 
-
-
-function Monday() {
+function TasksContainer(props) {
     const {tasks} = React.useContext(TasksContext)
     
     return (
-        <div className='day-of-week'>
-            <h2 onClick={()=>{console.log(tasks)}}>Monday</h2>
+        <div className='tasks-container'>
+            <h2 onClick={()=>{console.log(tasks)}}>{props.day}</h2>
 
-            <div className="tasks-container">
+            <div>
                 {
                     tasks.map(task => {
                         return(
@@ -37,4 +36,8 @@ function Monday() {
     );
 }
 
-export default Monday;
+TasksContainer.propTypes = {
+    day: PropTypes.string,
+}
+
+export default TasksContainer;

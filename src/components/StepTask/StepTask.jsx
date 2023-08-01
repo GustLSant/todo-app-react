@@ -1,6 +1,6 @@
-import React from "react";
+import './StepTask.css'
 import PropTypes from 'prop-types'
-import { IoCheckmarkCircle, IoCheckmarkCircleOutline, IoCloseCircle, IoCloseCircleOutline } from 'react-icons/io5'
+import { IoCheckmarkCircle, IoCheckmarkCircleOutline, IoCloseCircleOutline } from 'react-icons/io5'
 
 
 function StepTask(props){

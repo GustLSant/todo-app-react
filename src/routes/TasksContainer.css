@@ -1,0 +1,17 @@
+@import url('../App.css');
+
+.tasks-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: calc(100vh - 128px);
+
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.tasks-container > div{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}

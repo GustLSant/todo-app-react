@@ -1,9 +1,16 @@
 import React from 'react';
+import './SuperTask.css'
 import { TasksContext } from '../../contexts/TasksContext';
 import PropTypes from 'prop-types'
 import Button01 from '../Button01/Button01';
 import StepTask from '../StepTask/StepTask'
-import { IoCheckmarkCircle, IoCheckmarkCircleOutline, IoChevronDown, IoCloseCircleOutline, IoOptions } from 'react-icons/io5'
+import { 
+    IoCheckmarkCircle, IoCheckmarkCircleOutline, 
+    IoCloseCircleOutline,
+    IoSettingsOutline,
+    IoAddCircleOutline,
+    IoArrowUndoOutline,
+} from 'react-icons/io5'
 
 //Documentacao:
 
@@ -17,6 +24,9 @@ function SuperTask(props) {
     const [stepTasks, setStepTasks] = React.useState(props.stepTasks)
     const [isEditing, setIsEditing] = React.useState(false)
     const [deleteButtonText, setDeleteButtonText] = React.useState('Delete Task')
+
+    const buttonIconSize = '20px'
+    const buttonFontSize = '0.9em'
 
 
     function handleClickDoneButton(){
@@ -98,6 +108,7 @@ function SuperTask(props) {
 
     return (
         <div className="super-task">
+
             <div className="super-task__header">
                 <div className="super-task-header__title-container">
                     <textarea value={title} onChange={(e) => {setTitle(e.target.value)}} disabled={!isEditing} rows={1} />
@@ -111,14 +122,14 @@ function SuperTask(props) {
                     {
                         (!isEditing) ? 
                         [
-                            <Button01 key={1} label='Edit task' icon={<IoCheckmarkCircle size={'25px'} />} size={'1.05em'} onClick={() => {setIsEditing(true)}} />
+                            <Button01 key={0} label='Edit task' onClick={()=>{setIsEditing(true)}} icon={<IoSettingsOutline size={buttonIconSize} />} size={buttonFontSize}  />
                         ]
                          :
                         [
-                            <Button01 key={0} label='Add step task' onClick={handleClickAddStepTask} icon={<IoCheckmarkCircle size={'25px'} />} size={'1.05em'} />,
-                            <Button01 key={1} label={deleteButtonText} onClick={handleClickDeleteTask} icon={<IoCheckmarkCircle size={'25px'} />} size={'1.05em'} />,
-                            <Button01 key={2} label='Save changes' icon={<IoCheckmarkCircle size={'25px'} />} size={'1.05em'} onClick={handleClickSaveChanges} />,
-                            <Button01 key={3} label='Cancel changes' icon={<IoCheckmarkCircle size={'25px'} />} size={'1.05em'} onClick={handleClickCancelChanges} />
+                            <Button01 key={0} label='Add step task'    onClick={handleClickAddStepTask}   icon={<IoAddCircleOutline        size={buttonIconSize} />} size={buttonFontSize} />,
+                            <Button01 key={1} label={deleteButtonText} onClick={handleClickDeleteTask}    icon={<IoCloseCircleOutline      size={buttonIconSize} />} size={buttonFontSize} />,
+                            <Button01 key={2} label='Save changes'     onClick={handleClickSaveChanges}   icon={<IoCheckmarkCircleOutline  size={buttonIconSize} />} size={buttonFontSize} />,
+                            <Button01 key={3} label='Cancel changes'   onClick={handleClickCancelChanges} icon={<IoArrowUndoOutline        size={buttonIconSize} />} size={buttonFontSize} />
                         ]
                     }
                 </div>
@@ -135,6 +146,7 @@ function SuperTask(props) {
                     }
                 </div>
             </div>
+            
         </div>
     );
 }

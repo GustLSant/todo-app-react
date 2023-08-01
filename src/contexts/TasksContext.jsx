@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
 export const TasksContext = React.createContext()
 
@@ -14,12 +15,12 @@ export const TasksProvider = ({children}) => {
                 stepTasks: [
                     {
                         id: getUniqueID(),
-                        done: true,
+                        done: false,
                         body: 'step task 1'
                     },
                     {
                         id: getUniqueID(),
-                        done: true,
+                        done: false,
                         body: 'step task 2'
                     },
                     {
@@ -36,12 +37,12 @@ export const TasksProvider = ({children}) => {
                 stepTasks: [
                     {
                         id: getUniqueID(),
-                        done: true,
+                        done: false,
                         body: 'step task 1'
                     },
                     {
                         id: getUniqueID(),
-                        done: true,
+                        done: false,
                         body: 'step task 2'
                     },
                     {
@@ -58,12 +59,12 @@ export const TasksProvider = ({children}) => {
                 stepTasks: [
                     {
                         id: getUniqueID(),
-                        done: true,
+                        done: false,
                         body: 'step task 1'
                     },
                     {
                         id: getUniqueID(),
-                        done: true,
+                        done: false,
                         body: 'step task 2'
                     },
                     {
@@ -72,19 +73,24 @@ export const TasksProvider = ({children}) => {
                         body: 'step task 3'
                     }
                 ]
-            }
+            },
         ]
     )
     
     function getUniqueID(){
         id++
         return id
-        // return parseInt(`${Math.floor(Math.random() * 90) + 10}` + `${new Date().getTime()}`)
     }
+
+
 
     return(
         <TasksContext.Provider value={{tasks, setTasks, getUniqueID}}>
             {children}
         </TasksContext.Provider>
     )
+}
+
+TasksProvider.propTypes = {
+    children: PropTypes.array,
 }

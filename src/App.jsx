@@ -3,7 +3,7 @@ import './App.css'
 import { TasksProvider } from './contexts/TasksContext'
 import ButtonAddTask from './components/ButtonAddTask/ButtonAddTask'
 import Navbar from './components/Navbar/Navbar'
-import Monday from './routes/Monday'
+import TasksContainer from './routes/TasksContainer'
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
       <main>
         <TasksProvider>
           <ButtonAddTask />
-          <Monday />
+          <TasksContainer day={'Monday'} />
         </TasksProvider>
       </main>
     </div>
