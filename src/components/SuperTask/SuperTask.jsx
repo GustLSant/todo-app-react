@@ -17,7 +17,7 @@ import {
 
 
 function SuperTask(props) {
-    const {tasks, setTasks, getUniqueID} = React.useContext(TasksContext)
+    const {tasks, setTasksData, getUniqueID} = React.useContext(TasksContext)
     const id = props.id
     const [done, setDone] = React.useState(props.done)
     const [title, setTitle] = React.useState(props.title)
@@ -72,7 +72,7 @@ function SuperTask(props) {
         else{
             const newTasks = []
             
-            tasks.forEach(element => {
+            tasks.data.forEach(element => {
                 if(element.id === id){
                     return
                 }
@@ -81,15 +81,15 @@ function SuperTask(props) {
                 }
             })
 
-            setTasks(newTasks)
+            setTasksData(newTasks)
         }
     }
 
 
     function saveData(){
-        const newTasks = [...tasks]
+        const newTasksData = [...tasks.data] //precisa fazer um deep copy?
 
-        tasks.forEach(element => {
+        tasks.data.forEach(element => {
             if(element.id === id){
                 element.done = done
                 element.title = title
@@ -97,7 +97,7 @@ function SuperTask(props) {
             }
         })
 
-        setTasks(newTasks)
+        setTasksData(newTasksData)
     }
 
     // pra quando clicar no botao Done salvar as alteracoes

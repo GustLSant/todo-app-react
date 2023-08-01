@@ -2,7 +2,6 @@ import React from 'react'
 import './TasksContainer.css'
 import { TasksContext } from '../contexts/TasksContext'
 import SuperTask from '../components/SuperTask/SuperTask'
-import PropTypes from 'prop-types'
 
 //RFS:
 // adicionar super task
@@ -16,16 +15,16 @@ import PropTypes from 'prop-types'
 
 
 
-function TasksContainer(props) {
+function TasksContainer() {
     const {tasks} = React.useContext(TasksContext)
     
     return (
         <div className='tasks-container'>
-            <h2 onClick={()=>{console.log(tasks)}}>{props.day}</h2>
+            <h2 onClick={()=>{console.log(tasks)}}>{tasks.day}</h2>
 
             <div>
                 {
-                    tasks.map(task => {
+                    tasks.data.map(task => {
                         return(
                             <SuperTask key={task.id} id={task.id} done={task.done} title={task.title} stepTasks={task.stepTasks} />
                         )
@@ -34,10 +33,6 @@ function TasksContainer(props) {
             </div>
         </div>
     );
-}
-
-TasksContainer.propTypes = {
-    day: PropTypes.string,
 }
 
 export default TasksContainer;

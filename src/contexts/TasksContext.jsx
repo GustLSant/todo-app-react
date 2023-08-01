@@ -6,8 +6,9 @@ export const TasksContext = React.createContext()
 let id = 0
 
 export const TasksProvider = ({children}) => {
-    const [tasks, setTasks] = React.useState(
-        [
+    const [tasks, setTasks] = React.useState({
+        day: 'Monday',
+        data: [
             {
                 id: getUniqueID(),
                 done: false,
@@ -74,18 +75,55 @@ export const TasksProvider = ({children}) => {
                     }
                 ]
             },
-        ]
-    )
+        ] 
+    })
     
+
+    function setTasksData(_newData){
+        const newTasks = {
+            day: tasks.day,
+            data: _newData
+        }
+
+        setTasks(newTasks)
+    }
+
+
     function getUniqueID(){
         id++
         return id
     }
 
 
+    //localStorage vai ser um dicionario com varias keys dos dias da semana, ex:
+    /*
+        {
+            monday: {
+                day: 'monday',
+                data: [...]
+            },
+            tuesday: {
+                day: 'tuesday',
+                data: [...]
+            },
+            ...
+        }
+
+    */
+
+    function saveToLocalStorage(){
+        //pega o valor do dia
+        //dependendo do valor do dia, altera uma ou outra key do localStorage
+    }
+
+
+    function getFromLocalStorage(_day){
+        //dependendo do parametro pega uma ou outra key
+    }
+
 
     return(
-        <TasksContext.Provider value={{tasks, setTasks, getUniqueID}}>
+        <TasksContext.Provider value={{tasks, setTasks, getUniqueID, setTasksData}}>
             {children}
         </TasksContext.Provider>
     )

@@ -22,7 +22,7 @@ function App() {
       <main>
         <TasksProvider>
           <ButtonAddTask />
-          <TasksContainer day={'Monday'} />
+          <TasksContainer />
         </TasksProvider>
       </main>
     </div>
