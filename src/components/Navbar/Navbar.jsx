@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 
 function Navbar(props) {
-    const {getFromLocalStorage} = React.useContext(TasksContext)
     const [active, setActive] = React.useState(true)
     const [dayState, setDayState] = React.useState('')
     const daysWeek = [
@@ -20,12 +19,12 @@ function Navbar(props) {
     ]
 
     function handleClickDayWeek(_day){
-        getFromLocalStorage(_day.toLowerCase())
+        props.handleClickDayWeek(_day)
         setDayState(_day)
     }
 
     function handleClickArchivedTasks(){
-
+        props.handleClickArchivedTasks()
     }
 
     function handleClickToggleNavBar(){
@@ -56,7 +55,7 @@ function Navbar(props) {
                         const classes = (isActive) ? "navbar__day-container active" : "navbar__day-container"
                         
                         return(
-                            <div key={key} onClick={() => {handleClickDayWeek(day)}} className={classes}>
+                            <div key={key} onClick={()=>{handleClickDayWeek(day)}} className={classes}>
                                 <div className='day-week__bar'></div>
                                 {day}
                             </div>
@@ -89,7 +88,9 @@ function Navbar(props) {
 
 Navbar.propTypes = {
     theme: PropTypes.string,
-    changeTheme: PropTypes.func
+    changeTheme: PropTypes.func,
+    handleClickDayWeek: PropTypes.func,
+    handleClickArchivedTasks: PropTypes.func,
 }
 
 export default Navbar;
