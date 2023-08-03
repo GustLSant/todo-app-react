@@ -8,7 +8,7 @@ function Button01(props) {
     return (
         <div className={classes} style={{fontSize: props.size}} onClick={props.onClick}>
             {props.icon}
-            {props.label}
+            <p>{props.label}</p>
         </div>
     );
 }

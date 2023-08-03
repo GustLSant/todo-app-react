@@ -18,6 +18,13 @@
 .super-task.done svg{
     filter: drop-shadow(0 0 3px var(--color-05));
 }
+.super-task.done .super-task-header__buttons-container p{
+    text-shadow: 0px 0px 5px var(--color-05);
+}
+.super-task.done textarea{
+    border-bottom: 1px solid var(--color-05);
+    box-shadow: 0px 5px 10px rgba(255, 182, 97, 0.2); /*rgba(255, 182, 97, 1.0)*/
+}
 
 .super-task__header{
     display: flex;
