@@ -8,76 +8,8 @@ let id = 0
 export const TasksProvider = ({children}) => {
     const [tasks, setTasks] = React.useState({
         day: 'Monday',
-        data: [
-            {
-                id: getUniqueID(),
-                done: false,
-                title: 'Title',
-                stepTasks: [
-                    {
-                        id: getUniqueID(),
-                        done: false,
-                        body: 'step task 1'
-                    },
-                    {
-                        id: getUniqueID(),
-                        done: false,
-                        body: 'step task 2'
-                    },
-                    {
-                        id: getUniqueID(),
-                        done: false,
-                        body: 'step task 3'
-                    }
-                ]
-            },
-            {
-                id: getUniqueID(),
-                done: false,
-                title: 'Title',
-                stepTasks: [
-                    {
-                        id: getUniqueID(),
-                        done: false,
-                        body: 'step task 1'
-                    },
-                    {
-                        id: getUniqueID(),
-                        done: false,
-                        body: 'step task 2'
-                    },
-                    {
-                        id: getUniqueID(),
-                        done: false,
-                        body: 'step task 3'
-                    }
-                ]
-            },
-            {
-                id: getUniqueID(),
-                done: false,
-                title: 'Title',
-                stepTasks: [
-                    {
-                        id: getUniqueID(),
-                        done: false,
-                        body: 'step task 1'
-                    },
-                    {
-                        id: getUniqueID(),
-                        done: false,
-                        body: 'step task 2'
-                    },
-                    {
-                        id: getUniqueID(),
-                        done: false,
-                        body: 'step task 3'
-                    }
-                ]
-            },
-        ] 
+        data: [] 
     })
-    
 
     function setTasksData(_newData){
         const newTasks = {
@@ -86,6 +18,7 @@ export const TasksProvider = ({children}) => {
         }
 
         setTasks(newTasks)
+        saveToLocalStorage()
     }
 
 
@@ -95,40 +28,34 @@ export const TasksProvider = ({children}) => {
     }
 
 
-    //localStorage vai ser um dicionario com varias keys dos dias da semana, ex:
-    /*
-        {
-            monday: {
-                day: 'monday',
-                data: [...]
-            },
-            tuesday: {
-                day: 'tuesday',
-                data: [...]
-            },
-            ...
-        }
-
-    */
-
     function saveToLocalStorage(){
-        //pega o valor do dia
-        //dependendo do valor do dia, altera uma ou outra key do localStorage
+        localStorage.setItem(tasks.day.toLowerCase(), JSON.stringify(tasks))
     }
 
 
     function getFromLocalStorage(_day){
-        //dependendo do parametro pega uma ou outra key
+        const value = JSON.parse(localStorage.getItem(_day))
+
+        if(value !== null){
+            setTasks(JSON.parse(localStorage.getItem(_day)))
+        }
+        else{
+            setTasks({
+                day: _day.charAt(0).toUpperCase()+_day.slice(1),
+                data: []
+            })
+        }
+        
     }
 
 
     return(
-        <TasksContext.Provider value={{tasks, setTasks, getUniqueID, setTasksData}}>
+        <TasksContext.Provider value={{tasks, setTasks, getUniqueID, setTasksData, getFromLocalStorage, saveToLocalStorage}}>
             {children}
         </TasksContext.Provider>
     )
 }
 
 TasksProvider.propTypes = {
-    children: PropTypes.array,
+    children: PropTypes.object,
 }

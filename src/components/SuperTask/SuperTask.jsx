@@ -107,7 +107,7 @@ function SuperTask(props) {
 
 
     return (
-        <div className="super-task">
+        <div className={`super-task ${(done) ? "done" : ""}`}>
 
             <div className="super-task__header">
                 <div className="super-task-header__title-container">

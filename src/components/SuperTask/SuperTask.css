@@ -12,7 +12,12 @@
     box-shadow: 4px 4px 4px black;
 }
 
-
+.super-task.done{
+    box-shadow: inset 0 0 6px var(--color-05);
+}
+.super-task.done svg{
+    filter: drop-shadow(0 0 3px var(--color-05));
+}
 
 .super-task__header{
     display: flex;

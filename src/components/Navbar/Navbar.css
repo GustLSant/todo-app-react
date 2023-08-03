@@ -74,6 +74,16 @@
 
 .navbar__footer{
     display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    
+    opacity: 0%;
+    transition: opacity 0.15s ease;
+}
+
+.navbar__footer > div{
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
@@ -81,12 +91,9 @@
     border-radius: 99px;
     background-color: var(--color-03);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
-    opacity: 0%;
-
-    transition: opacity 0.15s ease;
 }
 
-.navbar.active .navbar__footer:hover{
+.navbar.active .navbar__footer>div:hover{
     cursor: pointer;
     color: var(--color-04);
 }

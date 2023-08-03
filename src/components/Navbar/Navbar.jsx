@@ -1,11 +1,12 @@
-import './Navbar.css'
 import React from 'react'
-import { IoListCircle, IoMenu, IoBulb, IoBulbOutline } from "react-icons/io5"
+import './Navbar.css'
+import { TasksContext } from '../../contexts/TasksContext';
+import { IoListCircle, IoMenu, IoSaveOutline, IoBulb, IoBulbOutline } from "react-icons/io5"
 import PropTypes from 'prop-types';
 
 
 function Navbar(props) {
-
+    const {getFromLocalStorage} = React.useContext(TasksContext)
     const [active, setActive] = React.useState(true)
     const [dayState, setDayState] = React.useState('')
     const daysWeek = [
@@ -19,7 +20,12 @@ function Navbar(props) {
     ]
 
     function handleClickDayWeek(_day){
+        getFromLocalStorage(_day.toLowerCase())
         setDayState(_day)
+    }
+
+    function handleClickArchivedTasks(){
+
     }
 
     function handleClickToggleNavBar(){
@@ -62,13 +68,20 @@ function Navbar(props) {
             <div style={{flexGrow: '1'}}></div>
 
             
-            <div className="navbar__footer" onClick={handleClickTheme} >
-                {
-                    (props.theme === 'dark') ? 
-                    <IoBulb size={'20px'} /> : 
-                    <IoBulbOutline size={'20px'} />
-                }
-                Change Theme
+            <div className="navbar__footer">
+                <div onClick={handleClickArchivedTasks}>
+                    <IoSaveOutline size={'22px'} />
+                    Archived Tasks
+                </div>
+
+                <div onClick={handleClickTheme}>
+                    {
+                        (props.theme === 'dark') ? 
+                        <IoBulb size={'20px'} /> : 
+                        <IoBulbOutline size={'20px'} />
+                    }
+                    Change Theme
+                </div>
             </div>
         </div>
     );

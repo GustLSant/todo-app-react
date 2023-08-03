@@ -16,6 +16,11 @@ main{
   padding: 20px 0px;
 }
 
+.main__buttons-container{
+  display: flex;
+  gap: 20px;
+}
+
 .add-task-button{
   display: flex;
   align-items: center;
