@@ -20,11 +20,10 @@ function TasksDisplayer() {
     }
 
     function handleClickAddTask(){
-        let newTasksData = [...tasks.data]
-        const nextId = getUniqueID()
+        let newTasksData = [...tasks.data] //precisa fazer um deep copy?
         newTasksData.push(
             {
-            id: nextId,
+            id: getUniqueID(),
             done: false,
             title: 'New Task',
             stepTasks: []

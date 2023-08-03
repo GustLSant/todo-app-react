@@ -8,17 +8,21 @@ let id = 0
 export const TasksProvider = ({children}) => {
     const [tasks, setTasks] = React.useState({
         day: 'Monday',
-        data: [] 
+        nextId: id,
+        data: []
     })
+
+    // console.log(id)
 
     function setTasksData(_newData){
         const newTasks = {
             day: tasks.day,
+            nextId: id,
             data: _newData
         }
-
+        
         setTasks(newTasks)
-        saveToLocalStorage()
+        saveToLocalStorage(newTasks) //o problema está que nao está salvando o tasks depois de ser atualizado
     }
 
 
@@ -28,8 +32,8 @@ export const TasksProvider = ({children}) => {
     }
 
 
-    function saveToLocalStorage(){
-        localStorage.setItem(tasks.day.toLowerCase(), JSON.stringify(tasks))
+    function saveToLocalStorage(_newTasks){
+        localStorage.setItem(tasks.day.toLowerCase(), JSON.stringify(_newTasks))
     }
 
 
@@ -38,10 +42,13 @@ export const TasksProvider = ({children}) => {
 
         if(value !== null){
             setTasks(JSON.parse(localStorage.getItem(_day)))
+            id = value.nextId
         }
-        else{
+        else{ //se nao achou nada salvo no storage
+            id = 0
             setTasks({
                 day: _day.charAt(0).toUpperCase()+_day.slice(1),
+                nextId: id,
                 data: []
             })
         }
@@ -50,7 +57,7 @@ export const TasksProvider = ({children}) => {
 
 
     return(
-        <TasksContext.Provider value={{tasks, setTasks, getUniqueID, setTasksData, getFromLocalStorage, saveToLocalStorage}}>
+        <TasksContext.Provider value={{tasks, setTasks, getUniqueID, setTasksData, getFromLocalStorage}}>
             {children}
         </TasksContext.Provider>
     )

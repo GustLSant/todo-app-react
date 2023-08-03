@@ -1,6 +1,5 @@
 import React from 'react'
 import './Navbar.css'
-import { TasksContext } from '../../contexts/TasksContext';
 import { IoListCircle, IoMenu, IoSaveOutline, IoBulb, IoBulbOutline } from "react-icons/io5"
 import PropTypes from 'prop-types';
 
