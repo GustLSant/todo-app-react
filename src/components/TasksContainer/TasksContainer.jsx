@@ -1,7 +1,7 @@
 import React from 'react'
 import './TasksContainer.css'
-import { TasksContext } from '../contexts/TasksContext'
-import SuperTask from '../components/SuperTask/SuperTask'
+import { TasksContext } from '../../contexts/TasksContext'
+import SuperTask from '../SuperTask/SuperTask'
 
 //RFS:
 // adicionar super task

@@ -7,35 +7,6 @@
   height: 100vh;
 }
 
-main{
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 20px 0px;
-}
-
-.main__buttons-container{
-  display: flex;
-  gap: 20px;
-}
-
-.add-task-button{
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 10px 20px 10px 15px;
-  border-radius: 99px;
-  background-color: var(--color-03);
-  box-shadow: 4px 4px 4px black;
-  font-size: 1.15em;
-}
-
-.add-task-button:hover{
-  color: var(--color-04);
-  cursor: pointer;
-}
 
 textarea:enabled{
   color: white;
