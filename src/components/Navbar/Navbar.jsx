@@ -1,12 +1,15 @@
 import React from 'react'
 import './Navbar.css'
+import { TasksContext } from '../../contexts/TasksContext'
+import { useNavigate } from "react-router-dom"
 import { IoListCircle, IoMenu, IoSaveOutline, IoBulb, IoBulbOutline } from "react-icons/io5"
 import PropTypes from 'prop-types';
 
 
 function Navbar(props) {
     const [active, setActive] = React.useState(true)
-    const [dayState, setDayState] = React.useState('')
+    const { tasks, getFromLocalStorage } = React.useContext(TasksContext) // apenas para verificar qual o dia ativo
+    const navigate = useNavigate()
     const daysWeek = [
         'Sunday',
         'Monday',
@@ -17,16 +20,23 @@ function Navbar(props) {
         'Saturday'
     ]
 
+    function handleClickLogo(){
+        getFromLocalStorage('')
+        return navigate('/')
+    }
+
     function handleClickDayWeek(_day){
-        props.handleClickDayWeek(_day)
-        setDayState(_day)
+        getFromLocalStorage(_day.toLowerCase())
+        return navigate("/tasks")
     }
 
     function handleClickArchivedTasks(){
-        props.handleClickArchivedTasks()
+        getFromLocalStorage('archived')
+        return navigate("/archived-tasks")
     }
 
     function handleClickToggleNavBar(){
+        console.log(tasks)
         setActive(!active)
     }
 
@@ -40,7 +50,7 @@ function Navbar(props) {
     return (
         <div className={(active) ? "navbar active" : "navbar"}>
             <div className="navbar__header">
-                <div className='navbar-header__logo'>
+                <div className='navbar-header__logo' onClick={handleClickLogo}>
                     <IoListCircle size={'36px'} style={{transform: 'rotate(-0deg)'}} />
                     ToDo App
                 </div>
@@ -50,7 +60,7 @@ function Navbar(props) {
             <nav className="navbar__main">
                 {
                     daysWeek.map((day, key) => {
-                        const isActive = dayState === day
+                        const isActive = tasks.day === day
                         const classes = (isActive) ? "navbar__day-container active" : "navbar__day-container"
                         
                         return(
@@ -64,7 +74,6 @@ function Navbar(props) {
             </nav>
 
             <div style={{flexGrow: '1'}}></div>
-
             
             <div className="navbar__footer">
                 <div onClick={handleClickArchivedTasks}>
@@ -88,8 +97,6 @@ function Navbar(props) {
 Navbar.propTypes = {
     theme: PropTypes.string,
     changeTheme: PropTypes.func,
-    handleClickDayWeek: PropTypes.func,
-    handleClickArchivedTasks: PropTypes.func,
 }
 
 export default Navbar;

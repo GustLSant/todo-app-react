@@ -1,8 +1,7 @@
 import React from 'react'
 import './App.css'
-import { TasksContext } from './contexts/TasksContext'
+import { Outlet } from "react-router-dom"
 import Navbar from './components/Navbar/Navbar'
-import TasksDisplayer from './routes/TasksDisplayer'
 
 /*
   A fazer:
@@ -14,28 +13,19 @@ import TasksDisplayer from './routes/TasksDisplayer'
 
 
 function App() {
-  const {getFromLocalStorage} = React.useContext(TasksContext)
   const [theme, setTheme] = React.useState('dark')
 
   function changeTheme(){
     (theme === 'dark') ? setTheme('light') : setTheme('dark')
   }
 
-  function handleClickDayWeek(_day){
-    getFromLocalStorage(_day.toLowerCase())
-  }
-
-  function handleClickArchivedTasks(){
-    
-  }
-
 
   return (
     <div className={(theme === 'dark') ? 'app dark' : 'app light'}>
-        <Navbar theme={theme} changeTheme={changeTheme} handleClickDayWeek={handleClickDayWeek} handleClickArchivedTasks={handleClickArchivedTasks} />
+        <Navbar theme={theme} changeTheme={changeTheme} />
         
         <main>
-          <TasksDisplayer />
+          <Outlet />
         </main>
     </div>
   )

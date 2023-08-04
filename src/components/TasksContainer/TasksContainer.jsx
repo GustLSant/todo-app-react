@@ -20,7 +20,7 @@ function TasksContainer() {
     
     return (
         <div className='tasks-container'>
-            <h2 onClick={()=>{console.log(tasks)}}>{tasks.day}</h2>
+            <h2>{tasks.day}</h2>
 
             <div>
                 {

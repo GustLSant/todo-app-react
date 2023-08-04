@@ -1,0 +1,3 @@
+- digitar a url diretamente quebra a visualizacao do dia atual da navbar
+- clicar em DONE na superTask ativa todos os dones de suas miniTasks
+- adicionar um efeito de growup quando uma superTask for concluida

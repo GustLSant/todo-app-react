@@ -31,6 +31,10 @@
     color: var(--color-05);
 }
 
+.navbar-header__logo:hover{
+    cursor: pointer;
+}
+
 .navbar__button-toggle:hover{
     cursor: pointer;
     color: var(--color-04);
