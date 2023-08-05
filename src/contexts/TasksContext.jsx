@@ -12,6 +12,11 @@ export const TasksProvider = ({children}) => {
         data: []
     })
 
+    // para iniciar a pagina com o conteudo do monday
+    React.useEffect(()=>{
+        getFromLocalStorage('monday')
+    }, [])
+
     // console.log(id)
 
     function setTasksData(_newData){

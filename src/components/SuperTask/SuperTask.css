@@ -9,27 +9,19 @@
     padding: 15px;
     border-radius: 15px;
     background-color: var(--color-02);
-    box-shadow: 4px 4px 4px black;
-}
+    box-shadow: 4px 4px 4px black, inset 0 0 6px transparent;
 
-.super-task.done{
-    box-shadow: inset 0 0 6px var(--color-05);
-}
-.super-task.done svg{
-    filter: drop-shadow(0 0 3px var(--color-05));
-}
-.super-task.done .super-task-header__buttons-container p{
-    text-shadow: 0px 0px 5px var(--color-05);
-}
-.super-task.done textarea{
-    border-bottom: 1px solid var(--color-05);
-    box-shadow: 0px 5px 10px rgba(255, 182, 97, 0.2); /*rgba(255, 182, 97, 1.0)*/
+    transition: box-shadow 0.15s;
 }
 
 .super-task__header{
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.super-task svg:hover{
+    cursor: pointer;
 }
 
 .super-task-header__title-container{
@@ -42,9 +34,11 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    user-select: none;
 }
 
 .super-task textarea{
+
     padding-bottom: 3px;
     border-bottom: 1px solid var(--color-07);
     font-family: serif;
@@ -55,4 +49,72 @@
 }
 .super-task textarea:enabled{
     border-bottom: 1px solid white;
+}
+
+
+/* 
+### EFEITOS DE FADE-IN ##############################################################################################################
+*/
+
+
+@keyframes superTaskFadeIn {
+    0% {
+        opacity: 0%;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+}
+
+
+/* 
+### EFEITOS DE DONE #################################################################################################################
+*/
+
+
+@keyframes superTaskDone {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+/* 
+### APLICACAO DOS EFEITOS ###########################################################################################################
+*/
+
+
+.super-task{
+    animation-name: superTaskFadeIn;
+    animation-duration: var(--anim-duration);
+    animation-fill-mode: forwards;
+}
+
+.super-task.done{
+    box-shadow: 4px 4px 4px transparent, inset 0 0 6px var(--color-05);
+    animation-name: superTaskFadeIn, superTaskDone;
+}
+.super-task.done svg{
+    filter: drop-shadow(0 0 3px var(--color-05));
+}
+.super-task.done .super-task-header__buttons-container p{
+    text-shadow: 0px 0px 5px var(--color-05);
+}
+.super-task.done textarea{
+    border-bottom: 1px solid var(--color-05);
+    box-shadow: 0px 5px 10px rgba(255, 182, 97, 0.2);
 }

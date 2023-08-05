@@ -6,6 +6,8 @@
   --color-05: #FFB661; /* highlight 2 */
   --color-06: #88DFF0; /* highlight 3 */
   --color-07: #30343a; /* taks highlight */
+
+  --anim-duration: 0.2s;
   
   color: white;
   font-family: sans-serif;

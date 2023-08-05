@@ -139,8 +139,12 @@ function SuperTask(props) {
                 <div className="super-task-body__step-tasks-container">
                     {
                         stepTasks.map((st, key) => {
+                            let stTaksDone = st.done
+                            if(done){
+                                stTaksDone = done
+                            }
                             return(
-                                <StepTask key={key} id={st.id} done={st.done} body={st.body} isEditing={isEditing} stepTasks={stepTasks} setStepTasks={setStepTasks} saveData={saveData} />
+                                <StepTask key={key} id={st.id} done={stTaksDone} body={st.body} isEditing={isEditing} stepTasks={stepTasks} setStepTasks={setStepTasks} saveData={saveData} />
                             )
                         })
                     }
