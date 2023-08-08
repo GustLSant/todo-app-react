@@ -3,6 +3,7 @@ A fazer:
 - fazer o layout responsivo
     - rever o design na maneira mobile
 - super task tem uma funcao que verifica os dones de todas as stepTasks e determina seu Done a partir dela, mudar o Done de alguma stepTask executa essa funcao
+- fazer um auto-grow nos textAreas
 - colocar um bloqueio de adicionar novas tasks se n tiver com nenhum dia selecionado (se tiver recarregado a pagina)
 - trocar o botao Export Tasks de lugar
 - criar a funcao do Export Tasks

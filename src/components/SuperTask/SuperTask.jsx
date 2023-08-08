@@ -27,11 +27,25 @@ function SuperTask(props) {
 
     const buttonIconSize = '20px'
     const buttonFontSize = '0.9em'
-
+    const textAreaRef = React.useRef(null);
 
     function handleClickDoneButton(){
         setDone(!done)
     }
+
+
+    // atualiza o conteudo do text area e redimensiona sua altura de acordo com a demanda
+    function handleTitleChange(e){
+        setTitle(e.target.value)
+        textAreaRef.current.style.height = 'auto'
+        textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
+    }
+
+    // para o textarea ficar com a altura desejada ao renderizar a pegina
+    React.useEffect(()=>{
+        textAreaRef.current.style.height = 'auto'
+        textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
+    }, [])
 
 
     function handleClickSaveChanges(){
@@ -111,7 +125,7 @@ function SuperTask(props) {
 
             <div className="super-task__header">
                 <div className="super-task-header__title-container">
-                    <textarea value={title} onChange={(e) => {setTitle(e.target.value)}} disabled={!isEditing} rows={1} />
+                    <textarea value={title} onChange={(e) => {handleTitleChange(e)}} ref={textAreaRef} disabled={!isEditing} />
                     {
                         (done) ?
                         <IoCheckmarkCircle        size={'30px'} onClick={handleClickDoneButton} /> :

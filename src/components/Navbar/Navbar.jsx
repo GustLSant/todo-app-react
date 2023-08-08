@@ -44,7 +44,6 @@ function Navbar(props) {
     }
 
     function handleClickToggleNavBar(){
-        console.log(tasks)
         setActive(!active)
     }
 
@@ -54,7 +53,6 @@ function Navbar(props) {
         }
     }
 
-    console.log(active)
 
     return (
         <div className={(active) ? "navbar active" : "navbar"}>
