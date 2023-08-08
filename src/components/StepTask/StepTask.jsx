@@ -44,7 +44,7 @@ function StepTask(props){
 
 
     function handleToggleDone(){
-        const newStepTasks = [...props.stepTasks]
+        const newStepTasks = [...props.stepTasks] //precisa de um deep copy?
         
         props.stepTasks.forEach(element => {
             if(element.id === props.id){
@@ -52,6 +52,7 @@ function StepTask(props){
             }
         })
         
+        props.superTaskHandleSTDoneChange(newStepTasks)
         props.setStepTasks(newStepTasks)
         props.saveData()
     }
@@ -80,6 +81,7 @@ StepTask.propTypes = {
     isEditing: PropTypes.bool,
     stepTasks: PropTypes.array,
     setStepTasks: PropTypes.func,
+    superTaskHandleSTDoneChange: PropTypes.func,
     saveData: PropTypes.func,
 }
 

@@ -29,6 +29,7 @@ function SuperTask(props) {
     const buttonFontSize = '0.9em'
     const textAreaRef = React.useRef(null);
 
+
     function handleClickDoneButton(){
         setDone(!done)
     }
@@ -100,6 +101,17 @@ function SuperTask(props) {
     }
 
 
+    function handleStDoneChange(newStepTasks){
+        let isAllDone = true
+        newStepTasks.forEach((stepTask)=>{
+            if(!stepTask.done){
+                isAllDone = false
+            }
+        })
+        setDone(isAllDone)
+    }
+
+
     function saveData(){
         const newTasksData = [...tasks.data] //precisa fazer um deep copy?
 
@@ -153,17 +165,13 @@ function SuperTask(props) {
                 <div className="super-task-body__step-tasks-container">
                     {
                         stepTasks.map((st, key) => {
-                            let stTaksDone = st.done
-                            if(done){
-                                stTaksDone = done
-                            }
                             return(
-                                <StepTask key={key} id={st.id} done={stTaksDone} body={st.body} isEditing={isEditing} stepTasks={stepTasks} setStepTasks={setStepTasks} saveData={saveData} />
+                                <StepTask key={key} id={st.id} done={st.done} body={st.body} isEditing={isEditing} stepTasks={stepTasks} setStepTasks={setStepTasks} superTaskHandleSTDoneChange={handleStDoneChange} saveData={saveData} />
                             )
                         })
                     }
                     {
-                        ((stepTasks.length === 0) && <p style={{color:"rgba(255,255,255, 0.25)", marginTop: '5px'}}>No step tasks found, click &quot;Edit Task&quot; button to be able to add step tasks</p>)
+                        ((stepTasks.length === 0) && <p style={{color:"rgba(255,255,255, 0.25)",}}>No step tasks found, click &quot;Edit Task&quot; button to be able to add step tasks</p>)
                     }
                 </div>
             </div>
