@@ -1,10 +1,7 @@
 A fazer:
 - fazer o layout responsivo
     - rever o design na maneira mobile
-- colocar um bloqueio de adicionar novas tasks se n tiver com nenhum dia selecionado (se tiver recarregado a pagina)
-- trocar o botao Export Tasks de lugar
 - criar a funcao do Export Tasks
-- criar um botao Import Tasks
 - criar a pagina archived Tasks
 - digitar a url diretamente quebra a visualizacao do dia atual da navbar
 
@@ -19,7 +16,9 @@ Concluidas:
 - colocar instrucao para adicionar steptasks caso n tenha nenhuma (e indicacao de q n tem nenhuma)
 - fazer um auto-grow nos textAreas
 - super task tem uma funcao que verifica os dones de todas as stepTasks e determina seu Done a partir dela, mudar o Done de alguma stepTask executa essa funcao
-
+- colocar um bloqueio de adicionar novas tasks se n tiver com nenhum dia selecionado (se tiver recarregado a pagina)
+- trocar o botao Export Tasks de lugar
+- criar um botao Import Tasks
 
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import './Navbar.css'
 import { TasksContext } from '../../contexts/TasksContext'
 import { useNavigate } from "react-router-dom"
-import { IoListCircle, IoMenu, IoChevronBackOutline, IoSaveOutline, IoBulb, IoBulbOutline, IoDocumentsOutline } from "react-icons/io5"
+import { IoListCircle, IoMenu, IoChevronBackOutline, IoSaveOutline, IoBulb, IoBulbOutline, IoArchiveOutline, IoDocumentsOutline } from "react-icons/io5"
 import PropTypes from 'prop-types';
 
 
@@ -63,6 +63,9 @@ function Navbar(props) {
                         ToDo App
                     </div>
                 </div>
+
+                <div style={{flexGrow: '1'}}></div>
+
                 <nav className="navbar__main">
                     {
                         daysWeek.map((day, key) => {
@@ -78,23 +81,24 @@ function Navbar(props) {
                         })
                     }
                 </nav>
-                <div style={{flexGrow: '1'}}></div>
+                
+                <div style={{flexGrow: '2'}}></div>
                 
                 <div className="navbar__footer">
                     <div onClick={handleClickArchivedTasks}>
                         <IoSaveOutline size={'22px'} />
                         Archived Tasks
                     </div>
-                    <div onClick={handleClickTheme}>
+                    {/* <div onClick={handleClickTheme}>
                         {
                             (props.theme === 'dark') ?
                             <IoBulb size={'20px'} /> :
                             <IoBulbOutline size={'20px'} />
                         }
                         Change Theme
-                    </div>
+                    </div> */}
                     <div onClick={handleClickImportTasks}>
-                        <IoDocumentsOutline size={'22px'} />
+                        <IoArchiveOutline size={'22px'} />
                         Import Tasks
                     </div>
                     <div onClick={handleClickExportTasks}>
