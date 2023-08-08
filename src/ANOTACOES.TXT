@@ -5,6 +5,9 @@ A fazer:
 - super task tem uma funcao que verifica os dones de todas as stepTasks e determina seu Done a partir dela, mudar o Done de alguma stepTask executa essa funcao
 - colocar um bloqueio de adicionar novas tasks se n tiver com nenhum dia selecionado (se tiver recarregado a pagina)
 - trocar o botao Export Tasks de lugar
+- criar a funcao do Export Tasks
+- criar um botao Import Tasks
+- criar a pagina archived Tasks
 
 
 

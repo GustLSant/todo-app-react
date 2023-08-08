@@ -2,7 +2,7 @@ import React from 'react'
 import './Navbar.css'
 import { TasksContext } from '../../contexts/TasksContext'
 import { useNavigate } from "react-router-dom"
-import { IoListCircle, IoMenu, IoChevronBackOutline, IoSaveOutline, IoBulb, IoBulbOutline } from "react-icons/io5"
+import { IoListCircle, IoMenu, IoChevronBackOutline, IoSaveOutline, IoBulb, IoBulbOutline, IoDocumentsOutline } from "react-icons/io5"
 import PropTypes from 'prop-types';
 
 
@@ -33,6 +33,14 @@ function Navbar(props) {
     function handleClickArchivedTasks(){
         getFromLocalStorage('archived')
         return navigate("/archived-tasks")
+    }
+
+    function handleClickImportTasks(){
+        
+    }
+
+    function handleClickExportTasks(){
+
     }
 
     function handleClickToggleNavBar(){
@@ -86,6 +94,14 @@ function Navbar(props) {
                             <IoBulbOutline size={'20px'} />
                         }
                         Change Theme
+                    </div>
+                    <div onClick={handleClickImportTasks}>
+                        <IoDocumentsOutline size={'22px'} />
+                        Import Tasks
+                    </div>
+                    <div onClick={handleClickExportTasks}>
+                        <IoDocumentsOutline size={'22px'} />
+                        Export Tasks
                     </div>
                 </div>
             </div>
