@@ -1,14 +1,17 @@
+A fazer:
 - digitar a url diretamente quebra a visualizacao do dia atual da navbar
 - fazer o layout responsivo
     - rever o design na maneira mobile
-- colocar instrucao para adicionar tasks caso n tenha nenhuma (e indicacao de q n tem nenhuma)
-- colocar instrucao para adicionar steptasks caso n tenha nenhuma (e indicacao de q n tem nenhuma)
-- fazer as superTask ter flex-grow
 - super task tem uma funcao que verifica os dones de todas as stepTasks e determina seu Done a partir dela, mudar o Done de alguma stepTask executa essa funcao
 - colocar um bloqueio de adicionar novas tasks se n tiver com nenhum dia selecionado (se tiver recarregado a pagina)
+- trocar o botao Export Tasks de lugar
 
 
 
 
 
 
+
+Concluidas:
+- colocar instrucao para adicionar tasks caso n tenha nenhuma (e indicacao de q n tem nenhuma)
+- colocar instrucao para adicionar steptasks caso n tenha nenhuma (e indicacao de q n tem nenhuma)
