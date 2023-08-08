@@ -48,7 +48,7 @@ function TasksDisplayer() {
                 (tasks.day !== '') ?
                 <TasksContainer /> :
                 <div className="tasks-displayer__instructions-container">
-                    <p>No day selected, click</p> 
+                    <p>No day selected, click on the</p> 
                     <IoMenu />
                     <p>Icon in the top left corner to select a day and be able to manage your tasks</p>
                 </div>

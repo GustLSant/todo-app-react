@@ -171,7 +171,7 @@ function SuperTask(props) {
                         })
                     }
                     {
-                        ((stepTasks.length === 0) && <p style={{color:"rgba(255,255,255, 0.25)",}}>No step tasks found, click &quot;Edit Task&quot; button to be able to add step tasks</p>)
+                        ((stepTasks.length === 0) && <p style={{color:"rgba(255,255,255, 0.25)",}}>No step tasks found, click on the &quot;Edit Task&quot; button to be able to add step tasks</p>)
                     }
                 </div>
             </div>
