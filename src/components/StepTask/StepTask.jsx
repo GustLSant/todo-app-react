@@ -25,7 +25,6 @@ function StepTask(props){
     
     React.useEffect(()=>{
         textAreaRef.current.style.height = '1.0em'
-        console.log(textAreaRef.current.scrollHeight)
         textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
     }, [])
 

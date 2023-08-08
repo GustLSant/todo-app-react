@@ -9,6 +9,7 @@
     border-radius: 99px;
     background-color: var(--color-03);
     box-shadow: 4px 4px 4px black;
+    user-select: none;
 }
 
 .button-01:hover{

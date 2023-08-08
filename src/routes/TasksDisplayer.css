@@ -1,0 +1,24 @@
+@import url('../index.css');
+
+.tasks-displayer{
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.tasks-displayer__buttons-container{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    padding: 20px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.75);
+}
+
+.tasks-displayer__instructions-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 20px;
+    color: var(--color-instructions-text-01);
+}
+
