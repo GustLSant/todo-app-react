@@ -7,15 +7,10 @@ let id = 0
 
 export const TasksProvider = ({children}) => {
     const [tasks, setTasks] = React.useState({
-        day: 'Monday',
+        day: '',
         nextId: id,
         data: []
     })
-
-    // para iniciar a pagina com o conteudo do monday
-    React.useEffect(()=>{
-        getFromLocalStorage('monday')
-    }, [])
 
     // console.log(id)
 

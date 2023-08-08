@@ -23,10 +23,7 @@ function App() {
   return (
     <div className={(theme === 'dark') ? 'app dark' : 'app light'}>
         <Navbar theme={theme} changeTheme={changeTheme} />
-        
-        <main>
-          <Outlet />
-        </main>
+        <Outlet />
     </div>
   )
 }

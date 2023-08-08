@@ -1,8 +1,6 @@
 @import url('./index.css');
 
 .app{
-  display: flex;
-  gap: 20px;
   background-color: var(--color-01);
   height: 100vh;
 }

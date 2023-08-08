@@ -10,13 +10,14 @@ function TasksDisplayer() {
     const taskDisplayerStyles = {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start',
-        gap: '20px',
-        padding: '20px 0px',
+        maxHeight: '100%',
     }
     const buttonsContainerStyles = {
         display: 'flex',
         gap: '20px',
+        justifyContent: 'flex-end',
+        padding: '20px',
+        boxShadow: '0px 4px 4px rgba(0,0,0,0.75)',
     }
 
     function handleClickAddTask(){

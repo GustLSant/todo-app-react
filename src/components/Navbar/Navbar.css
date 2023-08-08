@@ -1,20 +1,42 @@
 @import url('../../App.css');
 
 .navbar{
+    position: fixed;
     display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 20px;
-    background-color: var(--color-02);
-    height: calc(100% - 40px);
-    box-shadow: 4px 0px 4px black;
-
-    margin-left: -180px;
-    transition: margin-left 0.15s ease;
+    z-index: 2;
+    gap: 20px;
+    top: 0px;
+    bottom: 0px;
+    left: -240px;
+    transition: left 0.15s ease;
 }
 
 .navbar.active{
-    margin-left: 0px;
+    left: 0px;
+}
+
+.navbar__content-container{
+    display: flex;
+    flex-direction: column;
+    min-width: 190px;
+    gap: 40px;
+    padding: 20px;
+    background-color: var(--color-02);
+    box-shadow: 4px 0px 4px black;
+}
+
+.navbar__toggle-button-container{
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+    align-self: flex-start;
+    border-radius: 99px;
+    background-color: var(--color-02);
+    box-shadow: 4px 0px 4px black;
+}
+.navbar__toggle-button-container:hover{
+    cursor: pointer;
+    color: var(--color-04);
 }
 
 .navbar__header{
@@ -33,11 +55,6 @@
 
 .navbar-header__logo:hover{
     cursor: pointer;
-}
-
-.navbar__button-toggle:hover{
-    cursor: pointer;
-    color: var(--color-04);
 }
 
 .navbar__main{
