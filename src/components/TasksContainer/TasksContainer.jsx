@@ -31,7 +31,7 @@ function TasksContainer() {
                     })
                 }
                 {
-                    ((tasks.data.length === 0) && <p style={{color:"rgba(255,255,255, 0.25)", marginTop: '5px'}}>No tasks found, click "Add Task" button to add the first task</p>)
+                    ((tasks.data.length === 0) && <p style={{color:"rgba(255,255,255, 0.25)", marginTop: '5px'}}>No tasks found, click &quot;Add Task&quot; button to add the first task</p>)
                 }
             </div>
         </div>

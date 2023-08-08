@@ -37,13 +37,13 @@ function SuperTask(props) {
     // atualiza o conteudo do text area e redimensiona sua altura de acordo com a demanda
     function handleTitleChange(e){
         setTitle(e.target.value)
-        textAreaRef.current.style.height = 'auto'
+        textAreaRef.current.style.height = '1.0em'
         textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
     }
 
     // para o textarea ficar com a altura desejada ao renderizar a pegina
     React.useEffect(()=>{
-        textAreaRef.current.style.height = 'auto'
+        textAreaRef.current.style.height = '1.0em'
         textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
     }, [])
 
@@ -163,7 +163,7 @@ function SuperTask(props) {
                         })
                     }
                     {
-                        ((stepTasks.length === 0) && <p style={{color:"rgba(255,255,255, 0.25)", marginTop: '5px'}}>No step tasks found, click "Edit Task" button to be able to add step tasks</p>)
+                        ((stepTasks.length === 0) && <p style={{color:"rgba(255,255,255, 0.25)", marginTop: '5px'}}>No step tasks found, click &quot;Edit Task&quot; button to be able to add step tasks</p>)
                     }
                 </div>
             </div>

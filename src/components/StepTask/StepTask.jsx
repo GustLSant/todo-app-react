@@ -1,10 +1,13 @@
+import React from 'react'
 import './StepTask.css'
 import PropTypes from 'prop-types'
 import { IoCheckmarkCircle, IoCheckmarkCircleOutline, IoCloseCircleOutline } from 'react-icons/io5'
 
 
 function StepTask(props){
-    
+    const textAreaRef = React.useRef(null)
+
+
     function handleBodyChange(e){
         const newStepTasks = JSON.parse(JSON.stringify(props.stepTasks)); // deep copy
         
@@ -15,8 +18,17 @@ function StepTask(props){
         })
 
         props.setStepTasks(newStepTasks)
+
+        textAreaRef.current.style.height = '1.0em'
+        textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
     }
     
+    React.useEffect(()=>{
+        textAreaRef.current.style.height = '1.0em'
+        console.log(textAreaRef.current.scrollHeight)
+        textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
+    }, [])
+
 
     function handleClickDelete(){
         const newStepTasks = []
@@ -47,7 +59,7 @@ function StepTask(props){
 
     return(
         <div className="step-task">
-            <textarea value={props.body} onChange={(e)=>{handleBodyChange(e)}} disabled={!props.isEditing} rows={1} />
+            <textarea value={props.body} onChange={(e)=>{handleBodyChange(e)}} ref={textAreaRef} disabled={!props.isEditing} />
             {
                 (props.isEditing) ?
                 <IoCloseCircleOutline size={'30px'} onClick={handleClickDelete} /> :

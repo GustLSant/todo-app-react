@@ -3,7 +3,7 @@
 .super-task{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     flex-basis: 250px;
     flex-grow: 1;
     padding: 15px;
@@ -53,6 +53,11 @@
     border-bottom: 1px solid white;
 }
 
+.super-task-body__step-tasks-container{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
 
 /* 
 ### EFEITOS DE FADE-IN ##############################################################################################################
