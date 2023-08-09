@@ -36,7 +36,7 @@ function Navbar(props) {
     }
 
     function handleClickImportTasks(){
-        
+        return navigate('/import-tasks')
     }
 
     function handleClickExportTasks(){
