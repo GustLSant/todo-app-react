@@ -30,7 +30,14 @@ function TasksDisplayer() {
 
     function handleClickArchiveTasks(){
         if(tasks.day !== ''){
-            return
+            const date = new Date()
+            
+            const data = {
+                day: `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`,
+                superTasks: tasks.data
+            }
+
+            // agr salva a DATA no localStorage
         }
         else{
             return

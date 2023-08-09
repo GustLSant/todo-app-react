@@ -10,7 +10,7 @@
   --color-instructions-text-01: rgba(255,255,255, 0.25);
   --color-alert-01: rgb(255, 50, 0);
 
-  --anim-duration: 0.15s;
+  --anim-duration: 0.125s;
   
   color: white;
   font-family: sans-serif;

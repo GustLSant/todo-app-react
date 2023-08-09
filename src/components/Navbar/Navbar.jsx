@@ -40,7 +40,17 @@ function Navbar(props) {
     }
 
     function handleClickExportTasks(){
-
+        const fileContent = JSON.stringify(localStorage)
+        
+        const file = new Blob([fileContent], {type: 'text/plain'})
+        const link = document.createElement('a')
+        
+        const date = new Date()
+        link.href = window.URL.createObjectURL(file)
+        link.download = `ExportedTasks_${date.getFullYear()}_${date.getMonth()+1}_${date.getDate()}.txt`; // nome do arquivo
+    
+        link.click()  // simula um clique no link para iniciar o download
+        link.remove() // remove o elemento recem criado
     }
 
     function handleClickToggleNavBar(){
