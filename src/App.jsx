@@ -19,7 +19,6 @@ function App() {
     (theme === 'dark') ? setTheme('light') : setTheme('dark')
   }
 
-
   return (
     <div className={(theme === 'dark') ? 'app dark' : 'app light'}>
         <Navbar theme={theme} changeTheme={changeTheme} />

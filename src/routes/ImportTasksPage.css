@@ -1,0 +1,21 @@
+@import url('../index.css');
+
+.import-tasks-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+.import-tasks-page > input::-webkit-file-upload-button{
+    padding: 20px;
+    color: red;
+}
+
+/* https://www.w3docs.com/snippets/css/how-to-customize-file-inputs.html */
+
+label{
+    display: block;
+}
