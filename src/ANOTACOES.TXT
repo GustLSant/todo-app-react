@@ -3,6 +3,7 @@ A fazer:
     - rever o design na maneira mobile
 - criar a pagina archived Tasks
 - digitar a url diretamente quebra a visualizacao do dia atual da navbar
+- quando uma instrucao fica com mais de um linha o alinhamento entre icone e texto fica quebrado
 
 
 

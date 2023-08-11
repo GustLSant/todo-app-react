@@ -28,16 +28,57 @@ function TasksDisplayer() {
     }
 
 
+    /*
+    {
+        archivedTasks: {
+            xxxx/xx/xx: [
+                ...SuperTasks
+            ],
+            xxxx/xx/xx: [
+                ...SuperTasks
+            ]
+        }
+    }
+    */
+    
     function handleClickArchiveTasks(){
-        if(tasks.day !== ''){
-            const date = new Date()
+        if(tasks.day !== ''){ // controle de erro para caso o usuario tenha recarregado a pagina e nenhuma dia esteja mais selecionado
+            let date = new Date()
+            date = `${date.getFullYear()}/${date.getMonth()+1}/${date.getDay()}`
             
-            const data = {
-                day: `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`,
-                superTasks: tasks.data
-            }
+            let archivedTasksSTR = localStorage.getItem('archivedTasks')
+            let archivedTasksOBJ = {}
 
-            // agr salva a DATA no localStorage
+            if(archivedTasksSTR){ //se tiver algo no localStorage, reinicializa com o parse da string
+                archivedTasksOBJ = JSON.parse(archivedTasksSTR)
+
+                if(archivedTasksOBJ[date]){ // se tiver algo armazenado nesse dia
+                    tasks.data.forEach((task)=>{ // armazena somente se n for repetido
+                        let canAdd = true
+                        archivedTasksOBJ[date].forEach((_task)=>{
+                            if(task.id === _task.id){
+                                canAdd = false
+                                return
+                            }
+                        })
+                        if(canAdd){
+                            archivedTasksOBJ[date].push(task)
+                        }
+                    })
+                }
+                else{ // se n tiver nada armzenado nesse dia
+                    archivedTasksOBJ[date] = [
+                        ...tasks.data
+                    ]
+                }
+            }
+            else{ //se n tiver nada no localStorage, reinicializa a variavel com um novo objeto e as tasks do dia
+                archivedTasksOBJ = {
+                    [date]: [...tasks.data]
+                }
+            }
+            
+            localStorage.setItem('archivedTasks', JSON.stringify(archivedTasksOBJ))
         }
         else{
             return
