@@ -3,7 +3,9 @@ A fazer:
     - rever o design na maneira mobile
 - criar a pagina archived Tasks
 - digitar a url diretamente quebra a visualizacao do dia atual da navbar
-- quando uma instrucao fica com mais de um linha o alinhamento entre icone e texto fica quebrado
+- consertar o texto de tutorial do tasksDisplayer
+- colocar efeitos de fade nos botoes da TaskDisplayer
+- colocar efeitos de fade na ArchivedTasks
 
 
 
@@ -20,6 +22,7 @@ Concluidas:
 - trocar o botao Export Tasks de lugar
 - criar um botao Import Tasks
 - criar a funcao do Export Tasks
+- quando uma instrucao fica com mais de um linha o alinhamento entre icone e texto fica quebrado
 
 
 

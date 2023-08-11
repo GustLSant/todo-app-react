@@ -1,0 +1,118 @@
+@import url('../index.css');
+
+.at-displayer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 80px 20px 0px 20px;
+}
+
+.at-displayer > p{
+    color: var(--color-instructions-text-01);
+}
+
+.at-displayer__days-container{
+    display: flex;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.at__day{
+    flex-basis: 150px;
+    /* flex-grow: 1; */
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: var(--color-02);
+    box-shadow: 4px 4px 4px black, inset 0 0 6px transparent;
+}
+
+.at__day:hover{
+    color: var(--color-05);
+    filter: brightness(150%);
+    cursor: pointer;
+    user-select: none;
+}
+
+
+/* 
+### ESTILOS DA TASK-DISPLAYER ################################################################################################
+*/
+
+.at__tasks-displayer{
+    position: fixed;
+    top: 80px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--color-01);
+    
+    display: none;
+    transition: opacity 0.15s;
+}
+
+.at__tasks-displayer.visible{
+    display: flex;
+    animation-name: FadeInTop;
+    animation-duration: 0.3s;
+}
+
+.at__tasks-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+
+/* 
+### ESTILOS DA TASK ##########################################################################################################
+*/
+
+.st__task{
+    flex-basis: 200px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: var(--color-02);
+    box-shadow: 4px 4px 4px transparent, inset 0 0 6px var(--color-05);
+    text-shadow: 0px 0px 4px var(--color-05);
+
+    animation-name: FadeInTop;
+    animation-duration: 0.3s;
+}
+
+.st__task svg{
+    font-size: 1.5em;
+    filter: drop-shadow(0 0 3px var(--color-05));
+}
+
+.st-task__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.st__task > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.st__task h3{
+    font-weight: 500;
+    font-size: 1.25em;
+}
