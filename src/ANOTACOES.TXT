@@ -2,6 +2,7 @@ A fazer:
 - fazer o layout responsivo
     - rever o design na maneira mobile
 - colocar efeitos de fade nos botoes da TaskDisplayer
+- fazer o tema light
 
 
 
