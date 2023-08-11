@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 10px;
     padding: 80px 20px 0px 20px;
+    max-height: calc(100vh - 80px);
 }
 
 .at-displayer > p{
@@ -19,6 +20,24 @@
     flex-wrap: wrap;
     padding-bottom: 10px;
     padding-right: 10px;
+    overflow-y: auto;
+}
+
+/* width */
+.at-displayer__days-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.at-displayer__days-container::-webkit-scrollbar-track {
+    background-color: var(--color-03);
+    border-radius: 99px;
+}
+
+/* Handle */
+.at-displayer__days-container::-webkit-scrollbar-thumb {
+    background-color: white; 
+    border-radius: 10px;
 }
 
 .at__day{
