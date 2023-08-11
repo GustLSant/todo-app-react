@@ -1,11 +1,7 @@
 A fazer:
 - fazer o layout responsivo
     - rever o design na maneira mobile
-- criar a pagina archived Tasks
-- digitar a url diretamente quebra a visualizacao do dia atual da navbar
-- consertar o texto de tutorial do tasksDisplayer
 - colocar efeitos de fade nos botoes da TaskDisplayer
-- colocar efeitos de fade na ArchivedTasks
 
 
 
@@ -23,7 +19,9 @@ Concluidas:
 - criar um botao Import Tasks
 - criar a funcao do Export Tasks
 - quando uma instrucao fica com mais de um linha o alinhamento entre icone e texto fica quebrado
-
+- criar a pagina archived Tasks
+- colocar efeitos de fade na ArchivedTasks
+- consertar o texto de tutorial do tasksDisplayer
 
 
 
