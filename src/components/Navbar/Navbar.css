@@ -20,8 +20,8 @@
     flex-direction: column;
     min-width: 190px;
     padding: 20px;
-    background-color: var(--color-02);
-    box-shadow: 4px 0px 4px black;
+    background-color: var(--color-navbar);
+    box-shadow: 4px 0px 4px var(--box-shadow-02);
 }
 
 .navbar__toggle-button-container{
@@ -30,12 +30,13 @@
     margin-top: 10px;
     align-self: flex-start;
     border-radius: 99px;
-    background-color: var(--color-02);
-    box-shadow: 4px 0px 4px black;
+    background-color: var(--color-navbar);
+    box-shadow: 4px 4px 4px var(--box-shadow-01);
 }
 .navbar__toggle-button-container:hover{
     cursor: pointer;
     color: var(--color-04);
+    filter: brightness(150%);
 }
 
 .navbar__header{
@@ -49,7 +50,7 @@
     align-items: center;
     font-size: 1.5em;
     font-weight: 700;
-    color: var(--color-05);
+    color: var(--color-04);
 }
 
 .navbar-header__logo:hover{
@@ -66,25 +67,25 @@
     gap: 0px;
     padding: 10px;
     font-size: 1.2em;
-    
-    transition: gap 0.15s ease;
+    background-color: var(--color-02);
+    transition: gap var(--anim-duration);
 }
 
 .navbar__day-container:hover{
     color: var(--color-04);
     cursor: pointer;
+    filter: brightness(150%);
 }
 
 .navbar__day-container.active{
-    color: var(--color-05);
-    font-weight: 700;
+    color: var(--color-04);
     gap: 10px;
 }
 
 .day-week__bar{
-    background-color: var(--color-05);
+    background-color: var(--color-04);
     width: 0px;
-
+    height: 100%;
     transition: width 0.15s ease;
 }
 
@@ -110,26 +111,15 @@
     padding: 10px 15px;
     border-radius: 99px;
     background-color: var(--color-03);
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 4px var(--box-shadow-02);
 }
 
 .navbar.active .navbar__footer>div:hover{
     cursor: pointer;
     color: var(--color-04);
+    filter: brightness(150%);
 }
 
 .navbar.active .navbar__footer{
     opacity: 100%;
-}
-
-
-/* THEME CHANGES =============================== */
-
-.app.light .navbar{
-    background-color: white;
-    color: black;
-}
-
-.app.light .navbar__footer{
-    color: white;
 }

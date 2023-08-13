@@ -1,14 +1,16 @@
 :root {
   --color-01: #08090B; /* background */
-  --color-02: #0E1215; /* navbar */
-  --color-03: #1B1C1E; /* tasks */
-  --color-04: #ffdaae; /* highlight 1 */
-  --color-05: #FFB661; /* highlight 2 */
-  --color-06: #88DFF0; /* highlight 3 */
-  --color-07: #30343a; /* taks highlight */
+  --color-02: #14191d; /* navbar e tasks */
+  --color-03: #222325; /* botoes */
+  --color-04: #FFB661; /* highlight 2 (principal) */
+  --color-navbar: #14191d; /* navbar */
 
   --color-instructions-text-01: rgba(255,255,255, 0.25);
   --color-alert-01: rgb(255, 50, 0);
+
+  --box-shadow-01: rgba(0,0,0, 1.00);
+  --box-shadow-02: rgba(0,0,0, 0.75);
+  --box-shadow-03: rgba(0,0,0, 0.50);
 
   --anim-duration: 0.125s;
   
@@ -16,11 +18,31 @@
   font-family: sans-serif;
 }
 
+/* #88DFF0 */
+
 *{
   margin: 0px;
   padding: 0px;
   border: none;
   background-color: transparent;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--color-03);
+  border-radius: 99px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: white; 
+  border-radius: 10px;
 }
 
 @keyframes FadeInTop {

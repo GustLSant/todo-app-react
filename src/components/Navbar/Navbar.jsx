@@ -65,7 +65,7 @@ function Navbar(props) {
 
 
     return (
-        <div className={(active) ? "navbar active" : "navbar"}>
+        <div className={`navbar ${(active)?'active':''}`}>
             <div className='navbar__content-container'>
                 <div className="navbar__header">
                     <div className='navbar-header__logo' onClick={handleClickLogo}>
@@ -99,14 +99,14 @@ function Navbar(props) {
                         <IoSaveOutline size={'22px'} />
                         Archived Tasks
                     </div>
-                    {/* <div onClick={handleClickTheme}>
+                    <div onClick={handleClickTheme}>
                         {
                             (props.theme === 'dark') ?
                             <IoBulb size={'20px'} /> :
                             <IoBulbOutline size={'20px'} />
                         }
                         Change Theme
-                    </div> */}
+                    </div>
                     <div onClick={handleClickImportTasks}>
                         <IoArchiveOutline size={'22px'} />
                         Import Tasks

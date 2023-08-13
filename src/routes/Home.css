@@ -15,9 +15,9 @@
     justify-content: center;
     align-items: center;
     padding: 4vw;
-    box-shadow: 0px 10px 20px black;
+    box-shadow: 0px 10px 20px var(--box-shadow-01);
     font-size: 5vw;
-    color: var(--color-05);
+    color: var(--color-04);
 }
 
 .home > p{

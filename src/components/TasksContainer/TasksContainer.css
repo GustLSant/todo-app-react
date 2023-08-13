@@ -8,23 +8,6 @@
     overflow-y: auto;
 }
 
-/* width */
-.tasks-container::-webkit-scrollbar {
-    width: 5px;
-}
-
-/* Track */
-.tasks-container::-webkit-scrollbar-track {
-    background-color: var(--color-03);
-    border-radius: 99px;
-}
-
-/* Handle */
-.tasks-container::-webkit-scrollbar-thumb {
-    background-color: white; 
-    border-radius: 10px;
-}
-
 .tasks-container > div{
     display: flex;
     align-items: flex-start;

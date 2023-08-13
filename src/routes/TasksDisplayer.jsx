@@ -3,7 +3,7 @@ import './TasksDisplayer.css'
 import { TasksContext } from '../contexts/TasksContext'
 import TasksContainer from '../components/TasksContainer/TasksContainer'
 import Button01 from '../components/Button01/Button01'
-import { IoAddCircle, IoSaveOutline, IoMenu } from 'react-icons/io5'
+import { IoAddCircleOutline, IoSaveOutline, IoMenu } from 'react-icons/io5'
 
 
 function TasksDisplayer() {
@@ -89,7 +89,7 @@ function TasksDisplayer() {
     return (
         <div className="tasks-displayer">
             <div className="tasks-displayer__buttons-container">
-                <Button01 label={'Add Task'} onClick={handleClickAddTask} icon={<IoAddCircle size={'28px'} />} size={'1.0em'} />
+                <Button01 label={'Add Task'} onClick={handleClickAddTask} icon={<IoAddCircleOutline size={'28px'} />} size={'1.0em'} />
                 <Button01 label={'Archive Tasks'} onClick={handleClickArchiveTasks} icon={<IoSaveOutline size={'24px'} />} size={'1.0em'} />
             </div>
             {

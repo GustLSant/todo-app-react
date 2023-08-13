@@ -5,7 +5,22 @@
   height: 100vh;
 }
 
-
 textarea:enabled{
   color: white;
+}
+
+.app.light{
+  --color-01: #E7ECEF; /* background */
+  --color-02: #FFFFFF; /* navbar e task */
+  --color-03: #DFE0DF; /* botoes */
+  --color-05: #FFB661; /* highlight 2 (principal) */
+  
+
+  --color-instructions-text-01: rgba(0,0,0, 0.75);
+  --color-alert-01: rgb(255, 50, 0);
+
+  /*
+    #F2F5FF
+    #8E9B90
+  */
 }
