@@ -95,11 +95,11 @@ function Navbar(props) {
                 <div style={{flexGrow: '2'}}></div>
                 
                 <div className="navbar__footer">
-                    <div onClick={handleClickArchivedTasks}>
+                    <div onClick={handleClickArchivedTasks} className='hover-effect-01'>
                         <IoSaveOutline size={'22px'} />
                         Archived Tasks
                     </div>
-                    <div onClick={handleClickTheme}>
+                    <div onClick={handleClickTheme} className='hover-effect-01'>
                         {
                             (props.theme === 'dark') ?
                             <IoBulb size={'20px'} /> :
@@ -107,18 +107,18 @@ function Navbar(props) {
                         }
                         Change Theme
                     </div>
-                    <div onClick={handleClickImportTasks}>
+                    <div onClick={handleClickImportTasks} className='hover-effect-01'>
                         <IoArchiveOutline size={'22px'} />
                         Import Tasks
                     </div>
-                    <div onClick={handleClickExportTasks}>
+                    <div onClick={handleClickExportTasks} className='hover-effect-01'>
                         <IoDocumentsOutline size={'22px'} />
                         Export Tasks
                     </div>
                 </div>
             </div>
 
-            <div className="navbar__toggle-button-container" onClick={handleClickToggleNavBar}>
+            <div className="navbar__toggle-button-container hover-effect-02" onClick={handleClickToggleNavBar}>
                 {
                     (active) ?
                     <IoChevronBackOutline size={'36px'} className='navbar__button-toggle' /> :

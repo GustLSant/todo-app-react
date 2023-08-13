@@ -12,12 +12,6 @@
     user-select: none;
 }
 
-.button-01:hover{
-    cursor: pointer;
-    color: var(--color-04);
-    filter: brightness(150%);
-}
-
 .stretch{
     max-width: 100%;
 }

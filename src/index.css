@@ -1,6 +1,6 @@
 :root {
   --color-01: #08090B; /* background */
-  --color-02: #14191d; /* navbar e tasks */
+  --color-02: #14191d; /* tasks */
   --color-03: #222325; /* botoes */
   --color-04: #FFB661; /* highlight 2 (principal) */
   --color-navbar: #14191d; /* navbar */
@@ -43,6 +43,24 @@
 ::-webkit-scrollbar-thumb {
   background-color: white; 
   border-radius: 10px;
+}
+
+/* botoes no geral */
+.hover-effect-01:hover{
+  cursor: pointer;
+  color: var(--color-04);
+  filter: brightness(150%);
+}
+
+/* botao de toggle da navbar (botes que vao ficar escuros mesmo no tema light) */
+.hover-effect-02:hover{
+  cursor: pointer;
+  color: var(--color-04);
+  filter: brightness(150%);
+}
+
+textarea:enabled{
+  color: white;
 }
 
 @keyframes FadeInTop {

@@ -32,7 +32,7 @@
     padding: 15px;
     border-radius: 15px;
     background-color: var(--color-02);
-    box-shadow: 4px 4px 4px black, inset 0 0 6px transparent;
+    box-shadow: 4px 4px 4px var(--box-shadow-01), inset 0 0 6px transparent;
 }
 
 .at__day:hover{

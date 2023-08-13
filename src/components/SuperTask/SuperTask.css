@@ -9,7 +9,7 @@
     padding: 15px;
     border-radius: 15px;
     background-color: var(--color-02);
-    box-shadow: 4px 4px 4px black, inset 0 0 6px transparent;
+    box-shadow: 4px 4px 4px var(--box-shadow-01), inset 0 0 6px transparent;
 
     transition: box-shadow 0.15s;
 }
@@ -41,7 +41,7 @@
 .super-task textarea{
     flex-grow: 1;
     padding: 3px;
-    border-bottom: 1px solid var(--color-07);
+    border-bottom: 1px solid rgb(75,75,75);
     font-family: serif;
     font-size: 1.0em;
     overflow: hidden;

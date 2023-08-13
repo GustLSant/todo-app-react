@@ -2,25 +2,62 @@
 
 .app{
   background-color: var(--color-01);
+  background-image: linear-gradient(to bottom, rgba(0,0,0, 0.2), transparent, transparent, transparent);
   height: 100vh;
 }
 
-textarea:enabled{
-  color: white;
-}
-
 .app.light{
-  --color-01: #E7ECEF; /* background */
-  --color-02: #FFFFFF; /* navbar e task */
-  --color-03: #DFE0DF; /* botoes */
-  --color-05: #FFB661; /* highlight 2 (principal) */
-  
+  --color-01: #e1e6e9; /* background */
+  --color-02: #ffffff; /* tasks */
+  --color-03: #92724d; /* botoes */
+  --color-04: #FFB661; /* highlight 2 (principal) */
+  --color-navbar: #24262b; /* navbar */
 
   --color-instructions-text-01: rgba(0,0,0, 0.75);
   --color-alert-01: rgb(255, 50, 0);
 
-  /*
-    #F2F5FF
-    #8E9B90
-  */
+  --box-shadow-01: rgba(0,0,0, 0.3);
+  --box-shadow-02: rgba(0,0,0, 0.3);
+  --box-shadow-03: rgba(0,0,0, 0.3);
+
+  /* color: rgba(40, 40, 40); */
+
+  background-image: linear-gradient(to bottom, rgba(0,0,0, 0.15), transparent, transparent);
+}
+
+.app.light .hover-effect-01:hover{
+  color: white;
+  filter: brightness(130%);
+}
+
+/* Track */
+.app.light ::-webkit-scrollbar-track {
+  background-color: rgb(175,175,175);
+  border-radius: 99px;
+}
+
+/* Handle */
+.app.light ::-webkit-scrollbar-thumb {
+  background-color: rgb(255,255,255); 
+  border-radius: 10px;
+}
+
+
+/* 
+### MUDANCA DE ESTILOS COM TEMA PARA ELEMENTOS ESPECIFICOS ###################################################################
+*/
+
+.app.light .button-01{
+  color: white;
+}
+
+.app.light textarea{
+  border-bottom: 1px solid rgb(150,150,150);
+}
+.app.light textarea:disabled{
+  color: rgba(0,0,0, 0.7);
+}
+.app.light textarea:enabled{
+  color: rgba(0,0,0, 1.0);
+  border-bottom: 1px solid black;
 }

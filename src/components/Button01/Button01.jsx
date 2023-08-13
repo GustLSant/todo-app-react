@@ -3,10 +3,9 @@ import PropTypes from 'prop-types'
 
 
 function Button01(props) {
-    const classes = (props.stretch === true) ? "button-01 stretch" : "button-01"
     
     return (
-        <div className={classes} style={{fontSize: props.size}} onClick={props.onClick}>
+        <div className={`button-01 hover-effect-01 ${(props.stretch === true)?'stretch':''}`} style={{fontSize: props.size}} onClick={props.onClick}>
             {props.icon}
             <p>{props.label}</p>
         </div>
