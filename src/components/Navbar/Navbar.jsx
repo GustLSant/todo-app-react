@@ -99,14 +99,14 @@ function Navbar(props) {
                         <IoSaveOutline size={'22px'} />
                         Archived Tasks
                     </div>
-                    <div onClick={handleClickTheme} className='hover-effect-01'>
+                    {/* <div onClick={handleClickTheme} className='hover-effect-01'>
                         {
                             (props.theme === 'dark') ?
                             <IoBulb size={'20px'} /> :
                             <IoBulbOutline size={'20px'} />
                         }
                         Change Theme
-                    </div>
+                    </div> */}
                     <div onClick={handleClickImportTasks} className='hover-effect-01'>
                         <IoArchiveOutline size={'22px'} />
                         Import Tasks

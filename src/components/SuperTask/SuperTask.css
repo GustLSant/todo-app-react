@@ -42,6 +42,8 @@
     flex-grow: 1;
     padding: 3px;
     border-bottom: 1px solid rgb(75,75,75);
+    background-color: rgba(255,255,255, 0.02);
+    border-radius: 5px;
     font-family: serif;
     font-size: 1.0em;
     overflow: hidden;
@@ -51,6 +53,7 @@
 }
 .super-task textarea:enabled{
     border-bottom: 1px solid white;
+    background-color: rgba(255,255,255, 0.035);
 }
 
 .super-task-body__step-tasks-container{
