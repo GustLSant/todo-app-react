@@ -27,19 +27,6 @@ function TasksDisplayer() {
         }
     }
 
-
-    /*
-    {
-        archivedTasks: {
-            xxxx/xx/xx: [
-                ...SuperTasks
-            ],
-            xxxx/xx/xx: [
-                ...SuperTasks
-            ]
-        }
-    }
-    */
     
     function handleClickArchiveTasks(){
         if(tasks.day !== ''){ // controle de erro para caso o usuario tenha recarregado a pagina e nenhuma dia esteja mais selecionado
@@ -85,7 +72,7 @@ function TasksDisplayer() {
         }
     }
 
-
+    
     return (
         <div className="tasks-displayer">
             <div className="tasks-displayer__buttons-container">

@@ -3,6 +3,7 @@ A fazer:
     - rever o design na maneira mobile
 - colocar efeitos de fade nos botoes da TaskDisplayer
 - fazer o tema light
+- colocar um favicon
 
 
 

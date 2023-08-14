@@ -14,10 +14,10 @@
 }
 
 .error-page a{
-    color: var(--color-05);
+    color: var(--color-04);
 }
 .error-page a:visited{
-    color: var(--color-04);
+    color: #5224ff;
 }
 
 .error-page > div{
@@ -27,6 +27,6 @@
     padding: 50px;
     box-shadow: 0px 10px 20px black;
     font-size: 5vw;
-    color: var(--color-05);
+    color: var(--color-04);
     user-select: none;
 }

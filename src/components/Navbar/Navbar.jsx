@@ -10,6 +10,7 @@ function Navbar(props) {
     const [active, setActive] = React.useState(false)
     const { tasks, getFromLocalStorage } = React.useContext(TasksContext) // apenas para verificar qual o dia ativo
     const navigate = useNavigate()
+    const fileInputImportTasks = React.useRef(null)
     const daysWeek = [
         'Sunday',
         'Monday',
@@ -35,8 +36,26 @@ function Navbar(props) {
         return navigate("/archived-tasks")
     }
 
-    function handleClickImportTasks(){
-        return navigate('/import-tasks')
+    function handleChangeImportTasks(){
+        const importedFile = fileInputImportTasks.current.files[0]
+        const reader = new FileReader()
+
+        reader.onload = (event)=>{
+            const fileContent = JSON.parse(event.target.result)
+            if(fileContent){
+                localStorage.clear()
+                Object.keys(fileContent).forEach((key)=>{
+                    if(key){ // verificacao para n copiar o conteudo de uma key vazia
+                        localStorage.setItem(key, fileContent[key])
+                    }
+                })
+            }
+            else{
+                console.log('Error: file cannot be imported')
+            }
+        }
+        
+        reader.readAsText(importedFile)
     }
 
     function handleClickExportTasks(){
@@ -95,7 +114,7 @@ function Navbar(props) {
                 <div style={{flexGrow: '2'}}></div>
                 
                 <div className="navbar__footer">
-                    <div onClick={handleClickArchivedTasks} className='hover-effect-01'>
+                    <div onClick={handleClickArchivedTasks} className='navbar-footer__button hover-effect-01'>
                         <IoSaveOutline size={'22px'} />
                         Archived Tasks
                     </div>
@@ -107,11 +126,12 @@ function Navbar(props) {
                         }
                         Change Theme
                     </div> */}
-                    <div onClick={handleClickImportTasks} className='hover-effect-01'>
+                    <div onChange={handleChangeImportTasks} className='navbar-footer__button hover-effect-01'>
                         <IoArchiveOutline size={'22px'} />
-                        Import Tasks
+                        <input type='file' id='import-task-button' ref={fileInputImportTasks} />
+                        <label htmlFor='import-task-button'>Import Tasks</label>
                     </div>
-                    <div onClick={handleClickExportTasks} className='hover-effect-01'>
+                    <div onClick={handleClickExportTasks} className='navbar-footer__button hover-effect-01'>
                         <IoDocumentsOutline size={'22px'} />
                         Export Tasks
                     </div>

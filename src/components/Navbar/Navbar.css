@@ -105,7 +105,7 @@
     transition: opacity 0.15s ease;
 }
 
-.navbar__footer > div{
+.navbar-footer__button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,6 +114,13 @@
     border-radius: 99px;
     background-color: var(--color-03);
     box-shadow: 4px 4px 4px var(--box-shadow-02);
+}
+
+.navbar-footer__button > input[type='file']{
+    display: none;
+}
+.navbar-footer__button > label:hover{
+    cursor: pointer;
 }
 
 .navbar.active .navbar__footer{

@@ -41,7 +41,7 @@ export const TasksProvider = ({children}) => {
         const value = JSON.parse(localStorage.getItem(_day))
 
         if(value !== null){
-            setTasks(JSON.parse(localStorage.getItem(_day)))
+            setTasks(value)
             id = value.nextId
         }
         else{ //se nao achou nada salvo no storage
