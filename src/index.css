@@ -52,7 +52,7 @@
   filter: brightness(150%);
 }
 
-/* botao de toggle da navbar (botes que vao ficar escuros mesmo no tema light) */
+/* botao de toggle da navbar */
 .hover-effect-02:hover{
   cursor: pointer;
   color: var(--color-04);

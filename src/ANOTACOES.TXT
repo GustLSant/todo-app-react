@@ -4,6 +4,7 @@ A fazer:
 - colocar efeitos de fade nos botoes da TaskDisplayer
 - fazer o tema light
 - colocar um favicon
+- mudar a cor do botao de excluir task para vermelho qnd clicar pela primeira vez
 
 
 

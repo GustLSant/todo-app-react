@@ -49,6 +49,8 @@ function Navbar(props) {
                         localStorage.setItem(key, fileContent[key])
                     }
                 })
+
+                location.reload()
             }
             else{
                 console.log('Error: file cannot be imported')
@@ -118,14 +120,14 @@ function Navbar(props) {
                         <IoSaveOutline size={'22px'} />
                         Archived Tasks
                     </div>
-                    {/* <div onClick={handleClickTheme} className='hover-effect-01'>
+                    <div onClick={handleClickTheme} className='navbar-footer__button hover-effect-01'>
                         {
                             (props.theme === 'dark') ?
                             <IoBulb size={'20px'} /> :
                             <IoBulbOutline size={'20px'} />
                         }
                         Change Theme
-                    </div> */}
+                    </div>
                     <div onChange={handleChangeImportTasks} className='navbar-footer__button hover-effect-01'>
                         <IoArchiveOutline size={'22px'} />
                         <input type='file' id='import-task-button' ref={fileInputImportTasks} />
@@ -138,7 +140,7 @@ function Navbar(props) {
                 </div>
             </div>
 
-            <div className="navbar__toggle-button-container hover-effect-02" onClick={handleClickToggleNavBar}>
+            <div className="navbar__toggle-button-container hover-effect-01" onClick={handleClickToggleNavBar}>
                 {
                     (active) ?
                     <IoChevronBackOutline size={'36px'} className='navbar__button-toggle' /> :
