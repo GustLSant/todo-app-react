@@ -39,6 +39,7 @@ export const TasksProvider = ({children}) => {
 
     function getFromLocalStorage(_day){
         const value = JSON.parse(localStorage.getItem(_day))
+        // console.log('getFromLocalStorage do TasksContext chamado: ', JSON.parse(localStorage.getItem(_day)))
 
         if(value !== null){
             setTasks(value)

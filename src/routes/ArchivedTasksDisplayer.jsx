@@ -6,7 +6,11 @@ import { IoCheckmarkCircle, IoArrowUndoOutline } from 'react-icons/io5'
 
 function ArchivedTasksDisplayer(){
     const [superTasks, setSuperTasks] = React.useState([])
-    const [days] = React.useState( Object.keys(JSON.parse(localStorage.getItem('archivedTasks'))) )
+    const [days] = React.useState(
+        (localStorage.getItem('archivedTasks')) ?
+        Object.keys(JSON.parse(localStorage.getItem('archivedTasks'))) :
+        []
+    )
     const [selectedDay, setSelectedDay] = React.useState('')
 
     function handleClickDay(_day){
@@ -49,6 +53,10 @@ function ArchivedTasksDisplayer(){
                     })
                 }
             </div>
+
+            {
+                ((days.length === 0)) && <p>No archived tasks found. With a day selected, click &quot;Archive Tasks&quot; button to archive the first task.</p>
+            }
 
             <div className={`at__tasks-displayer ${(superTasks.length > 0) ? 'visible' : ''}`}>
                 <Button01 label={'Return'} icon={<IoArrowUndoOutline size={'1.4em'} />} onClick={handleClickReturnTasksDisplayer} />

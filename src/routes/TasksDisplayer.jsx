@@ -31,7 +31,7 @@ function TasksDisplayer() {
     function handleClickArchiveTasks(){
         if(tasks.day !== ''){ // controle de erro para caso o usuario tenha recarregado a pagina e nenhuma dia esteja mais selecionado
             let date = new Date()
-            date = `${date.getFullYear()}/${date.getMonth()+1}/${date.getDay() + Math.floor(Math.random()*10)}`
+            date = `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`
             
             let archivedTasksSTR = localStorage.getItem('archivedTasks')
             let archivedTasksOBJ = {}
@@ -87,7 +87,6 @@ function TasksDisplayer() {
                     <IoMenu />
                     <p>Icon in the top left corner to select a day and be able to manage your tasks</p>
                 </div>
-                
             }
         </div>
     );

@@ -5,6 +5,7 @@ A fazer:
 - fazer o tema light
 - colocar um favicon
 - mudar a cor do botao de excluir task para vermelho qnd clicar pela primeira vez
+- no mobile, ao tentar mudar um texto, fica desfocado
 
 
 

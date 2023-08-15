@@ -62,6 +62,9 @@
     flex-direction: column;
     gap: 7px;
 }
+.super-task-body__step-tasks-container > p{
+    color: var(--color-instructions-text-01);
+}
 
 /* 
 ### EFEITOS DE FADE-IN ##############################################################################################################
