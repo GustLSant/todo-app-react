@@ -15,3 +15,11 @@
 .stretch{
     max-width: 100%;
 }
+
+.danger-button{
+    background-color: var(--color-alert-01);
+}
+
+.hover-effect-01.danger-button:hover{
+    color: white;
+}

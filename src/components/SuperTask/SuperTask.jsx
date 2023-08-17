@@ -153,7 +153,7 @@ function SuperTask(props) {
                          :
                         [
                             <Button01 key={0} label='Add step task'    onClick={handleClickAddStepTask}   icon={<IoAddCircleOutline        size={buttonIconSize} />} size={buttonFontSize} />,
-                            <Button01 key={1} label={deleteButtonText} onClick={handleClickDeleteTask}    icon={<IoCloseCircleOutline      size={buttonIconSize} />} size={buttonFontSize} />,
+                            <Button01 key={1} label={deleteButtonText} onClick={handleClickDeleteTask}    icon={<IoCloseCircleOutline      size={buttonIconSize} />} size={buttonFontSize} isDangerous={(deleteButtonText === 'Confirm Delete') ? true : false} />,
                             <Button01 key={2} label='Save changes'     onClick={handleClickSaveChanges}   icon={<IoCheckmarkCircleOutline  size={buttonIconSize} />} size={buttonFontSize} />,
                             <Button01 key={3} label='Cancel changes'   onClick={handleClickCancelChanges} icon={<IoArrowUndoOutline        size={buttonIconSize} />} size={buttonFontSize} />
                         ]

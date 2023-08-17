@@ -41,28 +41,41 @@ function TasksDisplayer() {
 
                 if(archivedTasksOBJ[date]){ // se tiver algo armazenado nesse dia
                     tasks.data.forEach((task)=>{ // armazena somente se n for repetido
-                        let canAdd = true
+                        let isUnique = true
+
                         archivedTasksOBJ[date].forEach((_task)=>{
                             if(task.id === _task.id){
-                                canAdd = false
+                                isUnique = false
                                 return
                             }
                         })
-                        if(canAdd){
-                            archivedTasksOBJ[date].push(task)
+                        if(isUnique){
+                            if(task.done){ // so adiciona tasks concluidas
+                                archivedTasksOBJ[date].push(task)
+                            }
                         }
                     })
                 }
-                else{ // se n tiver nada armzenado nesse dia
-                    archivedTasksOBJ[date] = [
-                        ...tasks.data
-                    ]
+                else{ // se n tiver nada armzenado nesse dia (o dia n existe no localStorage)
+                    archivedTasksOBJ[date] = [] //inicializa o dia
+
+                    tasks.data.forEach((_task)=>{
+                        if(_task.done){
+                            archivedTasksOBJ[date].push(_task)
+                        }
+                    })
                 }
             }
-            else{ //se n tiver nada no localStorage, reinicializa a variavel com um novo objeto e as tasks do dia
+            else{ //se n tiver nada no localStorage, reinicializa a variavel com um novo objeto e as tasks do dia (que estejam concluidas)
                 archivedTasksOBJ = {
-                    [date]: [...tasks.data]
+                    [date]:[]
                 }
+
+                tasks.data.forEach((_task)=>{
+                    if(_task.done){
+                        archivedTasksOBJ[date].push(_task)
+                    }
+                })
             }
             
             localStorage.setItem('archivedTasks', JSON.stringify(archivedTasksOBJ))

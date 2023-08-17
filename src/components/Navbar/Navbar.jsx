@@ -62,6 +62,7 @@ function Navbar(props) {
 
     function handleClickExportTasks(){
         const fileContent = JSON.stringify(localStorage)
+        console.log(fileContent)
         
         const file = new Blob([fileContent], {type: 'text/plain'})
         const link = document.createElement('a')

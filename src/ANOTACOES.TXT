@@ -1,4 +1,5 @@
 A fazer:
+- falta poder excluir tasks arquivadas
 - colocar efeitos de fade nos botoes da TaskDisplayer
 - colocar um favicon
 - mudar a cor do botao de excluir task para vermelho qnd clicar pela primeira vez
@@ -26,7 +27,8 @@ Concluidas:
 - fazer o tema light
 - fazer o layout responsivo
     - rever o design na maneira mobile
-
+- so arquivar tasks concluidas
+- mudar a cor do botao de excluir task para vermelho qnd clicar pela primeira vez
 
 
 

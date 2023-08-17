@@ -19,7 +19,6 @@ function ArchivedTasksDisplayer(){
             setSuperTasks([...a])
             setSelectedDay(formatDay(_day))
         }
-        console.log('superTasks: ', a)
     }
 
 
