@@ -12,7 +12,6 @@ import ErrorPage from './routes/ErrorPage.jsx'
 import { TasksProvider } from './contexts/TasksContext'
 
 
-
 const router = createBrowserRouter([
   {
     path: "/",

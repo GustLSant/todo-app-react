@@ -10,7 +10,7 @@
     padding: 0px 20px;
 }
 
-.home > div{
+.home__logo{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,4 +40,22 @@
     .home > p{
         font-size: 1.0em;
     }
+}
+
+.credits-container{
+    position: fixed;
+    bottom: 3px;
+    right: 3px;
+    font-size: 0.9em;
+    opacity: 10%;
+}
+.credits-container a{
+    color: white;
+}
+
+.app.light .credits-container{
+    opacity: 30%;
+}
+.app.light .credits-container a{
+    color: black;
 }

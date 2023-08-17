@@ -1,8 +1,7 @@
 A fazer:
 - falta poder excluir tasks arquivadas
 - colocar um favicon
-- no mobile, ao tentar mudar um texto, fica desfocado
-- uma SuperTask sozinha fica grande, com uma stepTask, fica pequena 
+- no mobile, ao tentar mudar um texto, fica desfocado (as vezes acontece só, depende da resolucao..... n sei pq o elemento desloca ao colocar o focus no textarea...) 
 
 
 
