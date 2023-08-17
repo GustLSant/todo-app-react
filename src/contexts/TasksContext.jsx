@@ -12,7 +12,6 @@ export const TasksProvider = ({children}) => {
         data: []
     })
 
-    // console.log(id)
 
     function setTasksData(_newData){
         const newTasks = {
@@ -22,7 +21,7 @@ export const TasksProvider = ({children}) => {
         }
         
         setTasks(newTasks)
-        saveToLocalStorage(newTasks) //o problema está que nao está salvando o tasks depois de ser atualizado
+        saveToLocalStorage(newTasks)
     }
 
 
@@ -39,14 +38,13 @@ export const TasksProvider = ({children}) => {
 
     function getFromLocalStorage(_day){
         const value = JSON.parse(localStorage.getItem(_day))
-        // console.log('getFromLocalStorage do TasksContext chamado: ', JSON.parse(localStorage.getItem(_day)))
 
         if(value !== null){
             setTasks(value)
             id = value.nextId
         }
         else{ //se nao achou nada salvo no storage
-            id = 0
+            // id = 0 (se reiniciar o valor do ID, eh capaz de repedir a key e nao atualizar componentes da maneira correta)
             setTasks({
                 day: _day.charAt(0).toUpperCase()+_day.slice(1),
                 nextId: id,

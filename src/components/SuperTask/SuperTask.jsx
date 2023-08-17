@@ -33,7 +33,7 @@ function SuperTask(props) {
     function handleClickDoneButton(){
         setDone(!done)
     }
-
+    
 
     // atualiza o conteudo do text area e redimensiona sua altura de acordo com a demanda
     function handleTitleChange(e){

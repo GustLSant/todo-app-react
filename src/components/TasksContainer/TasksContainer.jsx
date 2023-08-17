@@ -17,7 +17,6 @@ import SuperTask from '../SuperTask/SuperTask'
 
 function TasksContainer() {
     const {tasks} = React.useContext(TasksContext)
-    console.log(tasks)
     
     return (
         <div className='tasks-container'>
@@ -27,7 +26,7 @@ function TasksContainer() {
                 {
                     tasks.data.map(task => {
                         return(
-                            <SuperTask key={task.id} id={task.id} done={task.done} title={task.title} stepTasks={task.stepTasks} />
+                            <SuperTask key={task.id}  id={task.id} done={task.done} title={task.title} stepTasks={task.stepTasks} />
                         )
                     })
                 }

@@ -1,12 +1,9 @@
 A fazer:
-- fazer o layout responsivo
-    - rever o design na maneira mobile
 - colocar efeitos de fade nos botoes da TaskDisplayer
-- fazer o tema light
 - colocar um favicon
 - mudar a cor do botao de excluir task para vermelho qnd clicar pela primeira vez
 - no mobile, ao tentar mudar um texto, fica desfocado
-
+- uma SuperTask sozinha fica grande, com uma stepTask, fica pequena 
 
 
 
@@ -26,6 +23,9 @@ Concluidas:
 - criar a pagina archived Tasks
 - colocar efeitos de fade na ArchivedTasks
 - consertar o texto de tutorial do tasksDisplayer
+- fazer o tema light
+- fazer o layout responsivo
+    - rever o design na maneira mobile
 
 
 
