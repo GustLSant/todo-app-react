@@ -47,7 +47,7 @@ function ArchivedTasksDisplayer(){
                 {
                     days.map((day, id)=>{
                         return(
-                            <div key={id} className="at__day" onClick={()=>{handleClickDay(day)}}>{formatDay(day)}</div>
+                            <div key={id} className="at__day fade-in-top" onClick={()=>{handleClickDay(day)}}>{formatDay(day)}</div>
                         )
                     })
                 }

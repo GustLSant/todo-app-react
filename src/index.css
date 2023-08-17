@@ -63,6 +63,12 @@ textarea:enabled{
   color: white;
 }
 
+.fade-in-top{
+  animation: FadeInTop;
+  animation-duration: var(--anim-duration);
+  animation-fill-mode: forwards;
+}
+
 @keyframes FadeInTop {
   0% {
     opacity: 0%;

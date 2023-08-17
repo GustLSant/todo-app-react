@@ -1,8 +1,6 @@
 A fazer:
 - falta poder excluir tasks arquivadas
-- colocar efeitos de fade nos botoes da TaskDisplayer
 - colocar um favicon
-- mudar a cor do botao de excluir task para vermelho qnd clicar pela primeira vez
 - no mobile, ao tentar mudar um texto, fica desfocado
 - uma SuperTask sozinha fica grande, com uma stepTask, fica pequena 
 
@@ -29,6 +27,9 @@ Concluidas:
     - rever o design na maneira mobile
 - so arquivar tasks concluidas
 - mudar a cor do botao de excluir task para vermelho qnd clicar pela primeira vez
+- colocar efeitos de fade nos botoes da TaskDisplayer
+
+
 
 
 
