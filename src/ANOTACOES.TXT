@@ -1,7 +1,6 @@
 A fazer:
 - excluir tasks arquivadas
 - excluir dias da secao ArchivedTasks
-- adicionar mais (20px?) padding no fundo da TasksContainer, pra poder scrollar mt pra baixo e poder ver o fundo da task no mobile
 - quando tiver editando a task, colocar um texto que ensina que tem q clicar em salvar ou cancelar as edicoes
 - criar uma segunda confirmacao para o 'cancel changes' da superTask
 - colocar cor padrao para o textarea desativado pq no iphone fica mt claro (????)
@@ -34,6 +33,7 @@ Concluidas:
 - colocar efeitos de fade nos botoes da TaskDisplayer
 - colocar um favicon
 - mudar o stepTask e o NewTask para um place Holder
+- adicionar mais (20px?) padding no fundo da TasksContainer, pra poder scrollar mt pra baixo e poder ver o fundo da task no mobile
 
 
 
