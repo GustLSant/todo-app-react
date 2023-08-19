@@ -8,7 +8,7 @@
 .app.light{
   --color-01: hsl(0 0% 97%); /* background */
   --color-02: hsl(25deg 50% 95%); /* tasks */
-  --color-03: hsl(25deg 40% 20%); /* botoes  */
+  --color-03: hsl(25deg 40% 30%); /* botoes  */
   --color-04: hsl(25deg 100% 35.29%); /* highlight 2 (principal) hsl(280deg 100% 35.29%) */
   --color-navbar: #d4d3d2; /* navbar */
 

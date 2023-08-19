@@ -72,7 +72,7 @@ function SuperTask(props) {
             {
                 id: getUniqueID(),
                 done: false,
-                body: 'step task'
+                body: ''
             }
         ]
 
@@ -137,7 +137,7 @@ function SuperTask(props) {
 
             <div className="super-task__header">
                 <div className="super-task-header__title-container">
-                    <textarea value={title} onChange={(e)=>{handleTitleChange(e)}} ref={textAreaRef} disabled={!isEditing} name='super-task-textarea' />
+                    <textarea value={title} onChange={(e)=>{handleTitleChange(e)}} ref={textAreaRef} disabled={!isEditing} placeholder='New Task' name='super-task-textarea' />
                     {
                         (done) ?
                         <IoCheckmarkCircle        size={'30px'} onClick={handleClickDoneButton} /> :

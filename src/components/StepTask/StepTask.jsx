@@ -59,7 +59,7 @@ function StepTask(props){
 
     return(
         <div className="step-task">
-            <textarea value={props.body} onChange={(e)=>{handleBodyChange(e)}} ref={textAreaRef} disabled={!props.isEditing} name='step-task-textarea' />
+            <textarea value={props.body} onChange={(e)=>{handleBodyChange(e)}} ref={textAreaRef} disabled={!props.isEditing} placeholder='New StepTask' name='step-task-textarea' />
             {
                 (props.isEditing) ?
                 <IoCloseCircleOutline size={'30px'} onClick={handleClickDelete} /> :

@@ -16,7 +16,7 @@ function TasksDisplayer() {
                 {
                 id: getUniqueID(),
                 done: false,
-                title: 'New Task',
+                title: '',
                 stepTasks: []
                 }
             )
