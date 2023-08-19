@@ -1,11 +1,11 @@
 A fazer:
-- excluir tasks arquivadas
-- excluir dias da secao ArchivedTasks
+- poder excluir tasks arquivadas
+- poder excluir dias da secao ArchivedTasks
 - quando tiver editando a task, colocar um texto que ensina que tem q clicar em salvar ou cancelar as edicoes
 - criar uma segunda confirmacao para o 'cancel changes' da superTask
 - colocar cor padrao para o textarea desativado pq no iphone fica mt claro (????)
 - logo da home fica mt pequena e mt embaixo no mobile
-- ser possivel etrair a navbar com um click fora dela (somente no mobile)
+- ser possivel extrair a navbar com um click fora dela (somente no mobile) (tlvz com context da funcao togle da navbar, sendo executada num evento onTouch do App)
 - arquivar as teasks, remove elas do dia
 - se arquivar, mostra um pop-up dizendo que arquivou
 
