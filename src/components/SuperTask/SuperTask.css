@@ -3,7 +3,7 @@
 .super-task{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     flex-basis: 250px;
     flex-grow: 1;
     padding: 15px;
@@ -18,7 +18,7 @@
 .super-task__header{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 .super-task svg:hover{
@@ -67,6 +67,11 @@
 }
 .super-task-body__step-tasks-container > p{
     color: var(--color-instructions-text-01);
+}
+
+.p-edit-instructions{
+    color: var(--color-instructions-text-01);
+    padding-top: 0px;
 }
 
 /* 
