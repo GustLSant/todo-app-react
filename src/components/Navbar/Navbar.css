@@ -2,19 +2,24 @@
 
 .navbar{
     position: fixed;
-    display: flex;
-    z-index: 3;
-    gap: 10px;
     top: 0px;
     bottom: 0px;
     left: -230px;
+    z-index: 3;
+    display: flex;
+    gap: 10px;
     transition: left 0.15s ease;
 
-    pointer-events: none; /* para nao impedir de clicar embaixo do botao de toggle da navbar */
+    /*pointer-events: none;*/ /* para nao impedir de clicar embaixo do botao de toggle da navbar */
 }
 
 .navbar.active{
     left: 0px;
+}
+@media (max-width: 500px){
+    .navbar.active{
+        width: 100vw;
+    }
 }
 
 .navbar__content-container{

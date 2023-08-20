@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 function Navbar(props) {
     const [active, setActive] = React.useState(false)
     const { tasks, getFromLocalStorage } = React.useContext(TasksContext) // apenas para verificar qual o dia ativo
+    const contentContainerRef = React.useRef(null)
+    const toggleButtonContainerRef = React.useRef(null)
     const navigate = useNavigate()
     const fileInputImportTasks = React.useRef(null)
     const daysWeek = [
@@ -21,20 +23,24 @@ function Navbar(props) {
         'Saturday'
     ]
 
+
     function handleClickLogo(){
         getFromLocalStorage('')
         return navigate('/')
     }
+
 
     function handleClickDayWeek(_day){
         getFromLocalStorage(_day.toLowerCase())
         return navigate("/tasks")
     }
 
+
     function handleClickArchivedTasks(){
         getFromLocalStorage('archived')
         return navigate("/archived-tasks")
     }
+
 
     function handleChangeImportTasks(){
         const importedFile = fileInputImportTasks.current.files[0]
@@ -60,6 +66,7 @@ function Navbar(props) {
         reader.readAsText(importedFile)
     }
 
+
     function handleClickExportTasks(){
         const fileContent = JSON.stringify(localStorage)
         console.log(fileContent)
@@ -75,9 +82,17 @@ function Navbar(props) {
         link.remove() // remove o elemento recem criado
     }
 
+
     function handleClickToggleNavBar(){
         setActive(!active)
     }
+
+    function handleTouch(event){
+        if(active && !toggleButtonContainerRef.current.contains(event.target) && !contentContainerRef.current.contains(event.target)){
+            setActive(false)
+        }
+    }
+
 
     function handleClickTheme(){
         if(active){
@@ -87,8 +102,8 @@ function Navbar(props) {
 
 
     return (
-        <div className={`navbar ${(active)?'active':''}`}>
-            <div className='navbar__content-container'>
+        <div className={`navbar ${(active)?'active':''}`} onTouchStart={(event)=>{handleTouch(event)}}>
+            <div className='navbar__content-container' ref={contentContainerRef}>
                 <div className="navbar__header">
                     <div className='navbar-header__logo' onClick={handleClickLogo}>
                         <IoListCircle size={'36px'} style={{transform: 'rotate(-0deg)'}} />
@@ -141,7 +156,7 @@ function Navbar(props) {
                 </div>
             </div>
 
-            <div className="navbar__toggle-button-container hover-effect-01" onClick={handleClickToggleNavBar}>
+            <div className="navbar__toggle-button-container hover-effect-01" onClick={handleClickToggleNavBar} ref={toggleButtonContainerRef}>
                 {
                     (active) ?
                     <IoChevronBackOutline size={'36px'} className='navbar__button-toggle' /> :
