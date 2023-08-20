@@ -24,6 +24,7 @@ function SuperTask(props) {
     const [stepTasks, setStepTasks] = React.useState(props.stepTasks)
     const [isEditing, setIsEditing] = React.useState(false)
     const [deleteButtonText, setDeleteButtonText] = React.useState('Delete Task')
+    const [cancelButtonText, setCancelButtonText] = React.useState('Cancel Changes')
 
     const buttonIconSize = '20px'
     const buttonFontSize = '0.9em'
@@ -51,18 +52,25 @@ function SuperTask(props) {
 
     function handleClickSaveChanges(){
         setDeleteButtonText('Delete Task')
+        setCancelButtonText('Cancel Changes')
         saveData()
         setIsEditing(false)
     }
 
 
     function handleClickCancelChanges(){
-        setDone(props.done)
-        setTitle(props.title)
-        setStepTasks(props.stepTasks)
-        setDeleteButtonText('Delete Task')
-        
-        setIsEditing(false)
+        if(cancelButtonText === 'Cancel Changes'){
+            setCancelButtonText('Confirm Cancel Changes')
+        }
+        else{
+            setDone(props.done)
+            setTitle(props.title)
+            setStepTasks(props.stepTasks)
+            setDeleteButtonText('Delete Task')
+            
+            setIsEditing(false)
+            setCancelButtonText('Cancel Changes')
+        }
     }
 
 
@@ -153,9 +161,9 @@ function SuperTask(props) {
                          :
                         [
                             <Button01 key={0} label='Add step task'    onClick={handleClickAddStepTask}   icon={<IoAddCircleOutline        size={buttonIconSize} />} size={buttonFontSize} />,
-                            <Button01 key={1} label={deleteButtonText} onClick={handleClickDeleteTask}    icon={<IoCloseCircleOutline      size={buttonIconSize} />} size={buttonFontSize} isDangerous={(deleteButtonText === 'Confirm Delete') ? true : false} />,
+                            <Button01 key={1} label={deleteButtonText} onClick={handleClickDeleteTask}    icon={<IoCloseCircleOutline      size={buttonIconSize} />} size={buttonFontSize} isDangerous={(deleteButtonText === 'Confirm Delete')} />,
                             <Button01 key={2} label='Save changes'     onClick={handleClickSaveChanges}   icon={<IoCheckmarkCircleOutline  size={buttonIconSize} />} size={buttonFontSize} />,
-                            <Button01 key={3} label='Cancel changes'   onClick={handleClickCancelChanges} icon={<IoArrowUndoOutline        size={buttonIconSize} />} size={buttonFontSize} />
+                            <Button01 key={3} label={cancelButtonText} onClick={handleClickCancelChanges} icon={<IoArrowUndoOutline        size={buttonIconSize} />} size={buttonFontSize} isDangerous={(cancelButtonText === 'Confirm Cancel Changes')} />
                         ]
                     }
                 </div>

@@ -17,9 +17,20 @@
 }
 
 .danger-button{
-    background-color: var(--color-alert-01);
+    animation-name: DangerButton;
+    animation-duration: 2.0s;
+    animation-fill-mode: forwards;
 }
 
 .hover-effect-01.danger-button:hover{
     color: white;
+}
+
+@keyframes DangerButton{
+    0%{
+        background-color: var(--color-alert-01);
+    }
+    100%{
+        background-color: var(--color-alert-02);
+    }
 }
