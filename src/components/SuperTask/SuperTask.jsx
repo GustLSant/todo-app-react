@@ -185,7 +185,7 @@ function SuperTask(props) {
             </div>
 
             {
-                (isEditing && <p className="p-edit-instructions">Click in &quot;Save changes&quot; or &quot;Cancel changes&quot; to stop editing</p>)
+                (isEditing && <p className="p-edit-instructions">Click &quot;Save changes&quot; or &quot;Cancel changes&quot; to stop editing</p>)
             }
             
         </div>

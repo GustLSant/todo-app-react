@@ -92,7 +92,7 @@ function TasksDisplayer() {
     
     return (
         <div className="tasks-displayer">
-            {renderPopUp && <PopUp text={'Tasks archived with success!'} success={true} setRender={setRenderPopUp} />}
+            {renderPopUp && <PopUp text={'Tasks archived successfully!'} success={true} setRender={setRenderPopUp} />}
             <div className="tasks-displayer__buttons-container">
                 <Button01 label={'Add Task'}      fadeStyle={'fade-in-top'} onClick={handleClickAddTask} icon={<IoAddCircleOutline size={'28px'} />} size={'1.0em'} />
                 <Button01 label={'Archive Tasks'} fadeStyle={'fade-in-top'} onClick={handleClickArchiveTasks} icon={<IoSaveOutline size={'24px'} />} size={'1.0em'} />
