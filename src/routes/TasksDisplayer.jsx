@@ -3,11 +3,14 @@ import './TasksDisplayer.css'
 import { TasksContext } from '../contexts/TasksContext'
 import TasksContainer from '../components/TasksContainer/TasksContainer'
 import Button01 from '../components/Button01/Button01'
+import PopUp from "../components/PopUp/PopUp"
 import { IoAddCircleOutline, IoSaveOutline, IoMenu } from 'react-icons/io5'
 
 
 function TasksDisplayer() {
     const {tasks, setTasksData, getUniqueID} = React.useContext(TasksContext)
+    const [renderPopUp, setRenderPopUp] = React.useState(false)
+
 
     function handleClickAddTask(){
         if(tasks.day !== ''){
@@ -79,6 +82,7 @@ function TasksDisplayer() {
             }
             
             localStorage.setItem('archivedTasks', JSON.stringify(archivedTasksOBJ))
+            setRenderPopUp(true)
         }
         else{
             return
@@ -88,6 +92,7 @@ function TasksDisplayer() {
     
     return (
         <div className="tasks-displayer">
+            {renderPopUp && <PopUp text={'Tasks archived with success!'} success={true} setRender={setRenderPopUp} />}
             <div className="tasks-displayer__buttons-container">
                 <Button01 label={'Add Task'}      fadeStyle={'fade-in-top'} onClick={handleClickAddTask} icon={<IoAddCircleOutline size={'28px'} />} size={'1.0em'} />
                 <Button01 label={'Archive Tasks'} fadeStyle={'fade-in-top'} onClick={handleClickArchiveTasks} icon={<IoSaveOutline size={'24px'} />} size={'1.0em'} />
