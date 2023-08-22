@@ -11,6 +11,14 @@ import { IoCloseSharp, IoCheckmarkSharp } from 'react-icons/io5'
 
 function PopUp(props){
     const popUpRef = React.useRef(null)
+    let contentStylesPosition = {}
+
+    if(props.position == 'right bottom'){
+        contentStylesPosition = {
+            justifyContent: 'flex-end',
+            alignItems: 'flex-end',
+        }
+    }
 
     React.useEffect(()=>{
         setTimeout(disable, 2500) // tem que ser o mesmo tempo (ou um pouquinho menos, pra agilizar) da animacao AnimationLifeTime
@@ -33,8 +41,8 @@ function PopUp(props){
 
 
     return (
-        <div className="pop-up" ref={popUpRef} onClick={handleInteract} onTouchStart={handleInteract}>
-            <div className="pop-up__content">
+        <div className="pop-up" ref={popUpRef} style={contentStylesPosition} >
+            <div className="pop-up__content" onClick={handleInteract} onTouchStart={handleInteract}>
                 {
                     (props.success) ?
                     <IoCheckmarkSharp /> :
@@ -52,6 +60,7 @@ PopUp.propTypes = {
     text: PropTypes.string,
     success: PropTypes.bool,
     setRender: PropTypes.func,
+    position: PropTypes.string,
 }
 
 export default PopUp;

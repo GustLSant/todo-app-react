@@ -9,7 +9,8 @@ import { IoAddCircleOutline, IoSaveOutline, IoMenu } from 'react-icons/io5'
 
 function TasksDisplayer() {
     const {tasks, setTasksData, getUniqueID} = React.useContext(TasksContext)
-    const [renderPopUp, setRenderPopUp] = React.useState(false)
+    const [renderPopUpSuccess, setRenderPopUpSuccess] = React.useState(false)
+    const [renderPopUpFail, setRenderPopUpFail] = React.useState(false)
 
 
     function handleClickAddTask(){
@@ -82,7 +83,10 @@ function TasksDisplayer() {
             }
             
             localStorage.setItem('archivedTasks', JSON.stringify(archivedTasksOBJ))
-            setRenderPopUp(true)
+            console.log(localStorage.getItem('archivedTasks'))
+            console.log(date)
+            if(localStorage.getItem('archivedTasks')[date]){setRenderPopUpSuccess(true)}
+            else{setRenderPopUpFail(true)}
         }
         else{
             return
@@ -92,7 +96,8 @@ function TasksDisplayer() {
     
     return (
         <div className="tasks-displayer">
-            {renderPopUp && <PopUp text={'Tasks archived successfully!'} success={true} setRender={setRenderPopUp} />}
+            {renderPopUpSuccess && <PopUp text={'Tasks archived successfully!'} success={true} position={'right bottom'} setRender={setRenderPopUpSuccess} />}
+            {renderPopUpFail && <PopUp text={'Archive Tasks Fail'} success={false} setRender={setRenderPopUpFail} />}
             <div className="tasks-displayer__buttons-container">
                 <Button01 label={'Add Task'}      fadeStyle={'fade-in-top'} onClick={handleClickAddTask} icon={<IoAddCircleOutline size={'28px'} />} size={'1.0em'} />
                 <Button01 label={'Archive Tasks'} fadeStyle={'fade-in-top'} onClick={handleClickArchiveTasks} icon={<IoSaveOutline size={'24px'} />} size={'1.0em'} />
