@@ -82,10 +82,16 @@ function TasksDisplayer() {
                 })
             }
             
-            localStorage.setItem('archivedTasks', JSON.stringify(archivedTasksOBJ))
-            console.log(localStorage.getItem('archivedTasks'))
-            console.log(date)
-            if(localStorage.getItem('archivedTasks')[date]){setRenderPopUpSuccess(true)}
+            // confirmacao de que realmente arquivou as tarefas
+
+            let success = true
+            try{localStorage.setItem('archivedTasks', JSON.stringify(archivedTasksOBJ))}
+            catch(e){
+                success = false
+                console.log(e)
+            }
+
+            if(success && JSON.parse(localStorage.getItem('archivedTasks'))[date]){setRenderPopUpSuccess(true)}
             else{setRenderPopUpFail(true)}
         }
         else{

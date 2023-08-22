@@ -84,7 +84,7 @@
 }
 
 .app.light .st__task{
-  text-shadow: 0px 0px 2px var(--color-04);
+  text-shadow: 0px 0px 1px var(--color-04);
 }
 
 .app.light .pop-up__content{

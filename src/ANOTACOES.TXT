@@ -4,6 +4,7 @@ A fazer:
 - colocar cor padrao para o textarea desativado pq no iphone fica mt claro (????)
 - logo da home fica mt pequena e mt embaixo no mobile
 - arquivar as tasks, remove elas do dia
+- no popup de sucesso do botao de arquivar, mostrar quantas foram arquivadas
 
 
 
