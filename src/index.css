@@ -14,6 +14,7 @@
   --box-shadow-03: rgba(0,0,0, 0.50);
 
   --anim-duration: 0.125s;
+  --anim-duration-02: 0.2s;
   
   color: white;
   font-family: sans-serif;
@@ -78,5 +79,16 @@ textarea:enabled{
   100% {
     opacity: 100%;
     transform: translateY(0px);
+  }
+}
+
+@keyframes FadeInLeft {
+  0% {
+    opacity: 0%;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0px);
   }
 }
