@@ -87,7 +87,7 @@ function Navbar(props) {
         setActive(!active)
     }
 
-    function handleTouch(event){
+    function handleRetract(event){
         if(active && !toggleButtonContainerRef.current.contains(event.target) && !contentContainerRef.current.contains(event.target)){
             setActive(false)
         }
@@ -102,7 +102,7 @@ function Navbar(props) {
 
 
     return (
-        <div className={`navbar ${(active)?'active':''}`} onTouchStart={(event)=>{handleTouch(event)}}>
+        <div className={`navbar ${(active)?'active':''}`} onTouchStart={(event)=>{handleRetract(event)}} onClick={(event)=>{handleRetract(event)}}>
             <div className='navbar__content-container' ref={contentContainerRef}>
                 <div className="navbar__header">
                     <div className='navbar-header__logo' onClick={handleClickLogo}>

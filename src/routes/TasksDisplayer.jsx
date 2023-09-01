@@ -91,7 +91,17 @@ function TasksDisplayer() {
                 console.log(e)
             }
 
-            if(success && JSON.parse(localStorage.getItem('archivedTasks'))[date]){setRenderPopUpSuccess(true)}
+            if(success && JSON.parse(localStorage.getItem('archivedTasks'))[date]){
+                setRenderPopUpSuccess(true)
+
+                let newTasksData = []
+                tasks.data.forEach((task)=>{
+                    if(!task.done){
+                        newTasksData.push(task) // so adiciona as que nao estao concluidas (que nao foram arquivadas)
+                    }
+                })
+                setTasksData(newTasksData)
+            }
             else{setRenderPopUpFail(true)}
         }
         else{

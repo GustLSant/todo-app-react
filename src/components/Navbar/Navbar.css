@@ -10,7 +10,7 @@
     gap: 10px;
     transition: left 0.15s ease;
 
-    /*pointer-events: none;*/ /* para nao impedir de clicar embaixo do botao de toggle da navbar */
+    pointer-events: none; /* para nao impedir de clicar embaixo do botao de toggle da navbar */
 }
 
 .navbar.active{
@@ -19,6 +19,7 @@
 @media (max-width: 500px){
     .navbar.active{
         width: 100vw;
+        pointer-events: auto;
     }
 }
 
