@@ -11,6 +11,7 @@ function TasksDisplayer() {
     const {tasks, setTasksData, getUniqueID} = React.useContext(TasksContext)
     const [renderPopUpSuccess, setRenderPopUpSuccess] = React.useState(false)
     const [renderPopUpFail, setRenderPopUpFail] = React.useState(false)
+    const [popUpArchiveTFailText, setPopUpArchiveTFailText] = React.useState('Archive Tasks Fail')
 
 
     function handleClickAddTask(){
@@ -39,6 +40,7 @@ function TasksDisplayer() {
             
             let archivedTasksSTR = localStorage.getItem('archivedTasks')
             let archivedTasksOBJ = {}
+            let isAnyTaskDone = false
 
             if(archivedTasksSTR){ //se tiver algo no localStorage, reinicializa com o parse da string
                 archivedTasksOBJ = JSON.parse(archivedTasksSTR)
@@ -56,6 +58,7 @@ function TasksDisplayer() {
                         if(isUnique){
                             if(task.done){ // so adiciona tasks concluidas
                                 archivedTasksOBJ[date].push(task)
+                                isAnyTaskDone = true
                             }
                         }
                     })
@@ -66,6 +69,7 @@ function TasksDisplayer() {
                     tasks.data.forEach((_task)=>{
                         if(_task.done){
                             archivedTasksOBJ[date].push(_task)
+                            isAnyTaskDone = true
                         }
                     })
                 }
@@ -78,6 +82,7 @@ function TasksDisplayer() {
                 tasks.data.forEach((_task)=>{
                     if(_task.done){
                         archivedTasksOBJ[date].push(_task)
+                        isAnyTaskDone = true
                     }
                 })
             }
@@ -92,8 +97,14 @@ function TasksDisplayer() {
             }
 
             if(success && JSON.parse(localStorage.getItem('archivedTasks'))[date]){
-                setRenderPopUpSuccess(true)
-
+                if(isAnyTaskDone){
+                    setRenderPopUpSuccess(true)
+                }
+                else{
+                    setPopUpArchiveTFailText('Tasks must be done to be archived')
+                    setRenderPopUpFail(true)
+                }
+                
                 let newTasksData = []
                 tasks.data.forEach((task)=>{
                     if(!task.done){
@@ -107,7 +118,10 @@ function TasksDisplayer() {
 
                 setTimeout(()=>{setTasksData(newTasksData)}, 400) //125ms eh o tempo de animacao padrao definido como variavel no index.css
             }
-            else{setRenderPopUpFail(true)}
+            else{
+                setPopUpArchiveTFailText('Archive Tasks Fail')
+                setRenderPopUpFail(true)
+            }
         }
         else{
             return
@@ -118,7 +132,7 @@ function TasksDisplayer() {
     return (
         <div className="tasks-displayer">
             {renderPopUpSuccess && <PopUp text={'Tasks archived successfully!'} success={true} position={'right bottom'} setRender={setRenderPopUpSuccess} />}
-            {renderPopUpFail && <PopUp text={'Archive Tasks Fail'} success={false} setRender={setRenderPopUpFail} />}
+            {renderPopUpFail && <PopUp text={popUpArchiveTFailText} success={false} setRender={setRenderPopUpFail} />}
             <div className="tasks-displayer__buttons-container">
                 <Button01 label={'Add Task'}      fadeStyle={'fade-in-top'} onClick={handleClickAddTask} icon={<IoAddCircleOutline size={'28px'} />} size={'1.0em'} />
                 <Button01 label={'Archive Tasks'} fadeStyle={'fade-in-top'} onClick={handleClickArchiveTasks} icon={<IoSaveOutline size={'24px'} />} size={'1.0em'} />
