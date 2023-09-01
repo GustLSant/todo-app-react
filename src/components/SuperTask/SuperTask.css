@@ -13,7 +13,7 @@
     box-shadow: 4px 4px 4px var(--box-shadow-01), inset 0 0 6px transparent;
 
     animation-name: superTaskFadeIn;
-    animation-duration: var(--anim-duration);
+    animation-duration: var(--anim-duration-02);
     animation-fill-mode: forwards;
 
     transition: box-shadow 0.15s;

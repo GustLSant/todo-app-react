@@ -28,7 +28,8 @@ function SuperTask(props) {
 
     const buttonIconSize = '20px'
     const buttonFontSize = '0.9em'
-    const textAreaRef = React.useRef(null);
+    const textAreaRef = React.useRef(null)
+    const divRef = React.useRef(null)
 
 
     function handleClickDoneButton(){
@@ -104,7 +105,9 @@ function SuperTask(props) {
                 }
             })
 
-            setTasksData(newTasks)
+            divRef.current.classList.add('been-deleted')
+
+            setTimeout(()=>{setTasksData(newTasks)}, 400)
         }
     }
 
@@ -141,7 +144,7 @@ function SuperTask(props) {
 
 
     return (
-        <div className={`super-task ${(done) ? "done" : ""}`}>
+        <div className={`super-task ${(done) ? "done" : ""}`} ref={divRef}>
 
             <div className="super-task__header">
                 <div className="super-task-header__title-container">
