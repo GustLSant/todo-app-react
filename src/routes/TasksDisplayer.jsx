@@ -100,7 +100,12 @@ function TasksDisplayer() {
                         newTasksData.push(task) // so adiciona as que nao estao concluidas (que nao foram arquivadas)
                     }
                 })
-                setTasksData(newTasksData)
+                
+                Array.from(document.getElementsByClassName('super-task done')).forEach((element)=>{
+                    element.classList.add('been-deleted')
+                })
+
+                setTimeout(()=>{setTasksData(newTasksData)}, 400) //125ms eh o tempo de animacao padrao definido como variavel no index.css
             }
             else{setRenderPopUpFail(true)}
         }
