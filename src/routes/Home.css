@@ -1,6 +1,8 @@
 @import url("../App.css");
 
 .home{
+    position: fixed;
+    top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
