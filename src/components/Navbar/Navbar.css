@@ -154,3 +154,17 @@
 .navbar.active .navbar__footer{
     opacity: 100%;
 }
+
+
+/* 
+### APLICACOES DOS ESTILOS DE TEMA ##############################################################################################################################
+*/
+
+.app.light .navbar__toggle-button-container:hover{
+    color: var(--color-04);
+    filter: brightness(110%);
+  }
+
+.app.light .navbar__day-container:hover{filter: brightness(110%);}
+
+.app.light .navbar__footer{color: white;}

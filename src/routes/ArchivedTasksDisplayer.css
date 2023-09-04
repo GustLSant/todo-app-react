@@ -124,3 +124,12 @@
     font-weight: 500;
     font-size: 1.25em;
 }
+
+
+/* 
+### APLICACOES DOS ESTILOS DE TEMA ##############################################################################################################################
+*/
+
+.app.light .st__task{
+    text-shadow: 0px 0px 0px var(--color-04);
+  }
