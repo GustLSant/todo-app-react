@@ -12,7 +12,9 @@ function TasksDisplayer() {
     const [renderPopUpSuccess, setRenderPopUpSuccess] = React.useState(false)
     const [renderPopUpFail, setRenderPopUpFail] = React.useState(false)
     const [popUpArchiveTFailText, setPopUpArchiveTFailText] = React.useState('Archive Tasks Fail')
+    const [archivedTasksCountState, setArchivedTasksCountState] = React.useState(0)
 
+    //console.log(archivedTasksCountState)
 
     function handleClickAddTask(){
         if(tasks.day !== ''){
@@ -40,10 +42,10 @@ function TasksDisplayer() {
             
             let archivedTasksSTR = localStorage.getItem('archivedTasks')
             let archivedTasksOBJ = {}
-            let isAnyTaskDone = false
+            let archivedTasksCount = 0
 
-            if(archivedTasksSTR){ //se tiver algo no localStorage, reinicializa com o parse da string
-                archivedTasksOBJ = JSON.parse(archivedTasksSTR)
+            if(archivedTasksSTR){ // se tiver algo no localStorage
+                archivedTasksOBJ = JSON.parse(archivedTasksSTR) // reinicializa a variavel com o parse da string
 
                 if(archivedTasksOBJ[date]){ // se tiver algo armazenado nesse dia
                     tasks.data.forEach((task)=>{ // armazena somente se n for repetido
@@ -57,47 +59,48 @@ function TasksDisplayer() {
                         })
                         if(isUnique){
                             if(task.done){ // so adiciona tasks concluidas
+                                archivedTasksCount += 1
                                 archivedTasksOBJ[date].push(task)
-                                isAnyTaskDone = true
                             }
                         }
                     })
                 }
                 else{ // se n tiver nada armzenado nesse dia (o dia n existe no localStorage)
-                    archivedTasksOBJ[date] = [] //inicializa o dia
+                    archivedTasksOBJ[date] = [] // inicializa o dia
 
-                    tasks.data.forEach((_task)=>{
+                    tasks.data.forEach((_task)=>{ // adiciona as tasks do dia (que estejam concluidas)
                         if(_task.done){
+                            archivedTasksCount += 1
                             archivedTasksOBJ[date].push(_task)
-                            isAnyTaskDone = true
                         }
                     })
                 }
             }
-            else{ //se n tiver nada no localStorage, reinicializa a variavel com um novo objeto e as tasks do dia (que estejam concluidas)
-                archivedTasksOBJ = {
+            else{ // se n tiver nada no localStorage
+                archivedTasksOBJ = { // reinicializa a variavel com um novo objeto
                     [date]:[]
                 }
 
-                tasks.data.forEach((_task)=>{
+                tasks.data.forEach((_task)=>{ // adiciona as tasks do dia (que estejam concluidas)
                     if(_task.done){
+                        archivedTasksCount += 1
                         archivedTasksOBJ[date].push(_task)
-                        isAnyTaskDone = true
                     }
                 })
             }
             
             // confirmacao de que realmente arquivou as tarefas
-
             let success = true
             try{localStorage.setItem('archivedTasks', JSON.stringify(archivedTasksOBJ))}
             catch(e){
                 success = false
-                console.log(e)
+                console.log('Error archiving tasks: ', e)
             }
 
             if(success && JSON.parse(localStorage.getItem('archivedTasks'))[date]){
-                if(isAnyTaskDone){
+                setArchivedTasksCountState(archivedTasksCount)
+                
+                if(archivedTasksCount > 0){
                     setRenderPopUpSuccess(true)
                 }
                 else{
@@ -131,7 +134,7 @@ function TasksDisplayer() {
     
     return (
         <div className="tasks-displayer">
-            {renderPopUpSuccess && <PopUp text={'Tasks archived successfully!'} success={true} position={'right bottom'} setRender={setRenderPopUpSuccess} />}
+            {renderPopUpSuccess && <PopUp text={archivedTasksCountState + ' tasks archived successfully!'} success={true} position={'right bottom'} setRender={setRenderPopUpSuccess} />}
             {renderPopUpFail && <PopUp text={popUpArchiveTFailText} success={false} setRender={setRenderPopUpFail} />}
             <div className="tasks-displayer__buttons-container">
                 <Button01 label={'Add Task'}      fadeStyle={'fade-in-top'} onClick={handleClickAddTask} icon={<IoAddCircleOutline size={'28px'} />} size={'1.0em'} />
