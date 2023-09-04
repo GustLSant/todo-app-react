@@ -42,6 +42,12 @@
     }
 }
 
+@media (max-width: 500px){
+    .home__logo{
+        font-size: 6vw;
+    }
+}
+
 .credits-container{
     position: fixed;
     bottom: 3px;

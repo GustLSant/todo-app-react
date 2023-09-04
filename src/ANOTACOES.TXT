@@ -1,10 +1,11 @@
 A fazer:
+- mudar todos os estilos de tema para seus respectivos .css
+- logo da home fica mt pequena e mt embaixo no mobile
+- resolucao menor que 313px o botao do navbar fica deslocado
+- no mobile, click pra fechara navbar ta atravessando e afetando tbm o botao de arquivar tasks
 - poder excluir tasks arquivadas
 - poder excluir dias da secao ArchivedTasks
 - colocar cor padrao para o textarea desativado pq no iphone fica mt claro (????)
-- logo da home fica mt pequena e mt embaixo no mobile
-- no popup de sucesso do botao de arquivar, mostrar quantas foram arquivadas
-- mudar todos os estilos de tema para seus respectivos .css
 
 
 
@@ -37,6 +38,6 @@ Concluidas:
 - se arquivar, mostra um pop-up dizendo que arquivou
 - arquivar as tasks, remove elas do dia
 - fazer um fade-in-left para as stepTasks
-
+- no popup de sucesso do botao de arquivar, mostrar quantas foram arquivadas
 
 
