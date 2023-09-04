@@ -4,7 +4,7 @@
     position: fixed;
     top: 0px;
     bottom: 0px;
-    left: -230px;
+    left: -230px; /* width + padding do content-container */
     z-index: 3;
     display: flex;
     gap: 10px;
@@ -40,6 +40,10 @@
 @media (max-width: 310px){
     .navbar__content-container{
         min-width: 100px;
+    }
+
+    .navbar{
+        left: -210px; /* pra compensar a nova min-width do content-container */
     }
 }
 
