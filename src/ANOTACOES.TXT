@@ -1,5 +1,5 @@
 A fazer:
-- mudar todos os estilos de tema para seus respectivos .css
+- adicionar um dia chamado 'Others'
 - no mobile, click pra fechara navbar ta atravessando e afetando tbm o botao de arquivar tasks
 - poder excluir tasks arquivadas
 - poder excluir dias da secao ArchivedTasks
@@ -40,7 +40,7 @@ Concluidas:
 - logo da home fica mt pequena e
 - logo da home fica mt embaixo no mobile
 - resolucao menor que 313px o botao do navbar fica deslocado
-
+- mudar todos os estilos de tema para seus respectivos .css
 
 
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import './ArchivedTasksDisplayer.css'
 import Button01 from '../components/Button01/Button01'
+import { useNavigate } from "react-router-dom"
 import { IoCheckmarkCircle, IoArrowUndoOutline } from 'react-icons/io5'
 
 
@@ -12,13 +13,16 @@ function ArchivedTasksDisplayer(){
         []
     )
     const [selectedDay, setSelectedDay] = React.useState('')
+    const navigate = useNavigate()
+
 
     function handleClickDay(_day){
-        let a = JSON.parse(localStorage.getItem('archivedTasks'))[_day]
-        if(a){
-            setSuperTasks([...a])
-            setSelectedDay(formatDay(_day))
-        }
+        return navigate(`/archived-tasks/${_day.replace(/\//g, "-")}`)
+        // let a = JSON.parse(localStorage.getItem('archivedTasks'))[_day]
+        // if(a){
+        //     setSuperTasks([...a])
+        //     setSelectedDay(formatDay(_day))
+        // }
     }
 
 

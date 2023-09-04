@@ -7,6 +7,7 @@ import App from './App.jsx'
 import Home from './routes/Home.jsx'
 import TasksDisplayer from './routes/TasksDisplayer.jsx'
 import ArchivedTasksDisplayer from './routes/ArchivedTasksDisplayer.jsx'
+import ArchivedTasksContainer from './components/ArchivedTasksContainer/ArchivedTasksContainer'
 import ErrorPage from './routes/ErrorPage.jsx'
 
 import { TasksProvider } from './contexts/TasksContext'
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/archived-tasks",
         element: <ArchivedTasksDisplayer />,
+      },
+      {
+        path: "/archived-tasks/:day",
+        element: <ArchivedTasksContainer />,
       },
     ]
   },

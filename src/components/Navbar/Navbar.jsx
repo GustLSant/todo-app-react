@@ -156,7 +156,7 @@ function Navbar(props) {
                 </div>
             </div>
 
-            <div className="navbar__toggle-button-container hover-effect-01" onClick={handleClickToggleNavBar} ref={toggleButtonContainerRef}>
+            <div className="navbar__toggle-button-container" onClick={handleClickToggleNavBar} ref={toggleButtonContainerRef}>
                 {
                     (active) ?
                     <IoChevronBackOutline size={'36px'} className='navbar__button-toggle' /> :

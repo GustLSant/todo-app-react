@@ -58,6 +58,11 @@
 
     pointer-events: auto;
 }
+.navbar__toggle-button-container:hover{
+    cursor: pointer;
+    color: var(--color-04);
+    filter: brightness(150%);
+}
 
 .navbar__header{
     display: flex;
@@ -163,7 +168,7 @@
 .app.light .navbar__toggle-button-container:hover{
     color: var(--color-04);
     filter: brightness(110%);
-  }
+}
 
 .app.light .navbar__day-container:hover{filter: brightness(110%);}
 
