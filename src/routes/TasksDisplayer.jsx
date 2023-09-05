@@ -39,6 +39,7 @@ function TasksDisplayer() {
         if(tasks.day !== ''){ // controle de erro para caso o usuario tenha recarregado a pagina e nenhuma dia esteja mais selecionado
             let date = new Date()
             date = `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`
+            //date = `${date.getFullYear()}/${date.getMonth()+1}/${Math.floor(Math.random() * 31)}`
             
             let archivedTasksSTR = localStorage.getItem('archivedTasks')
             let archivedTasksOBJ = {}

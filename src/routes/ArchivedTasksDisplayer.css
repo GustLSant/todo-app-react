@@ -3,13 +3,43 @@
 .at-displayer{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     padding: 80px 20px 0px 20px;
     max-height: calc(100vh - 80px);
 }
 
-.at-displayer > p{
+.at__add-instructions{
     color: var(--color-instructions-text-01);
+}
+
+.at-displayer__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.at-displayer-header__text-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.at-displayer-header__buttons-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 10px;
+    min-height: 86px;
+}
+.at-displayer-header__buttons-container .button-01{
+    animation-name: FadeInRight;
+    animation-fill-mode: forwards;
+    animation-duration: var(--anim-duration);
+}
+
+.at__edit-instructions{
+    color: var(--color-alert-01);
+    opacity: 50%;
 }
 
 .at-displayer__days-container{
@@ -24,7 +54,7 @@
 }
 
 .at__day{
-    flex-basis: 150px;
+    flex-basis: 125px;
     /* flex-grow: 1; */
     text-align: center;
     font-size: 1.1em;
@@ -43,89 +73,10 @@
     user-select: none;
 }
 
-
-/* 
-### ESTILOS DA TASK-DISPLAYER ################################################################################################
-*/
-
-.at__tasks-displayer{
-    position: fixed;
-    z-index: 2;
-    top: 80px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    background-color: var(--color-01);
-    /* overflow-x: hidden; */
-    
-    
-    display: none;
-    transition: opacity 0.15s;
+.at__day.editing{
+    color: var(--color-alert-01);
+    border-color: var(--color-alert-01);
 }
-
-.at__tasks-displayer.visible{
-    display: flex;
-    animation-name: FadeInTop;
-    animation-duration: 0.3s;
-}
-
-.at__tasks-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 20px;
-    overflow-y: auto;
-    padding-right: 10px;
-}
-
-
-/* 
-### ESTILOS DA TASK ##########################################################################################################
-*/
-
-.st__task{
-    flex-basis: 200px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px;
-    border-radius: 20px;
-    background-color: var(--color-02);
-    box-shadow: 4px 4px 4px transparent, inset 0 0 6px var(--color-04);
-    text-shadow: 0px 0px 4px var(--color-04);
-
-    animation-name: FadeInTop;
-    animation-duration: 0.3s;
-}
-
-.st__task svg{
-    font-size: 1.5em;
-    filter: drop-shadow(0 0 3px var(--color-04));
-}
-
-.st-task__header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.st__task > div{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.st__task h3{
-    font-weight: 500;
-    font-size: 1.25em;
-}
-
 
 /* 
 ### APLICACOES DOS ESTILOS DE TEMA ##############################################################################################################################
@@ -135,4 +86,9 @@
     filter: brightness(110%);
 }
 
-.app.light .at__day{border: 1px solid rgba(0,0,0, 0.25);}
+.app.light .at__day{
+    border-color: rgba(0,0,0, 0.25);
+}
+.app.light .at__day.editing{
+    border-color: var(--color-alert-01);
+}

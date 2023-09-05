@@ -13,7 +13,8 @@ function Home() {
             </div>
 
             <div className="credits-container">
-                FavIcon made by <a href="https://www.flaticon.com/authors/freepik" target='_blank' rel='noreferrer'>Freepik</a> from <a href="https://www.flaticon.com/" target='_blank' rel='noreferrer'>www.flaticon.com</a>
+                <p>WebApp made by Gustavo Lucas Santana</p>
+                <p>FavIcon made by <a href="https://www.flaticon.com/authors/freepik" target='_blank' rel='noreferrer'>Freepik</a> from <a href="https://www.flaticon.com/" target='_blank' rel='noreferrer'>www.flaticon.com</a></p>
             </div>
         </div>
     );

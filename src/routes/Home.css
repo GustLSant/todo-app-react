@@ -54,6 +54,7 @@
     position: fixed;
     bottom: 3px;
     right: 3px;
+    text-align: end;
     font-size: 0.9em;
     opacity: 10%;
 }
