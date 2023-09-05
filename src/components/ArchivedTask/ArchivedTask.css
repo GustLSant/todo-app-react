@@ -11,7 +11,7 @@
     border-radius: 20px;
     background-color: var(--color-02);
     box-shadow: 4px 4px 4px transparent, inset 0 0 6px var(--color-04);
-    text-shadow: 0px 0px 4px var(--color-04);
+    text-shadow: 0px 0px 3px var(--color-04);
 
     animation-name: FadeInTop;
     animation-duration: 0.3s;
@@ -38,6 +38,7 @@
     font-weight: normal;
     font-size: 1.00em;
     opacity: 60%;
+    text-shadow: none;
 }
 
 .archived-task p{
