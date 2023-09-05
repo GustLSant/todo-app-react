@@ -3,6 +3,7 @@
 .button-01{
     display: flex;
     align-items: center;
+    text-align: center;
     gap: 0.25em;
     padding: 10px 20px 10px 15px;
     max-width: fit-content;
@@ -10,6 +11,11 @@
     background-color: var(--color-03);
     box-shadow: 4px 4px 4px var(--box-shadow-01);
     user-select: none;
+}
+
+.button-01 > div{
+    display: flex;
+    align-items: center;
 }
 
 .stretch{

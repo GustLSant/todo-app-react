@@ -7,7 +7,7 @@ function Button01(props) {
     
     return (
         <div className={`button-01 hover-effect-01 ${(props.stretch === true)?'stretch':''} ${(props.isDangerous === true)?'danger-button':''} ${fadeStyle}`} style={{fontSize: props.size}} onClick={props.onClick}>
-            {props.icon}
+            <div>{props.icon}</div>
             <p>{props.label}</p>
         </div>
     );
