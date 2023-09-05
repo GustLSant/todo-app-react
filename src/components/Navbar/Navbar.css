@@ -73,7 +73,7 @@
 .navbar-header__logo{
     display: flex;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 700;
     color: var(--color-04);
 }
