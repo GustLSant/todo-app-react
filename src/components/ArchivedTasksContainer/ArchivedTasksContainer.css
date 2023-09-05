@@ -1,0 +1,23 @@
+@import url('../../index.css');
+
+.at-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    padding-top: 90px;
+    background-color: var(--color-01);
+
+    animation-name: FadeInTop;
+    animation-duration: 0.3s;
+}
+
+.at-container__tasks-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-y: auto;
+    padding-right: 10px;
+}

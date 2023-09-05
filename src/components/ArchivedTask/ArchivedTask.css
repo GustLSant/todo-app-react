@@ -1,0 +1,53 @@
+@import url('../../index.css');
+
+
+.archived-task{
+    flex-basis: 200px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: var(--color-02);
+    box-shadow: 4px 4px 4px transparent, inset 0 0 6px var(--color-04);
+    text-shadow: 0px 0px 4px var(--color-04);
+
+    animation-name: FadeInTop;
+    animation-duration: 0.3s;
+}
+
+.archived-task svg{
+    font-size: 1.5em;
+    filter: drop-shadow(0 0 1px var(--color-04));
+}
+
+.archived-task__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.archived-task > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.archived-task h3{
+    font-weight: 500;
+    font-size: 1.00em;
+}
+
+.archived-task p{
+    font-size: 1.20em;
+}
+
+
+/* 
+### APLICACOES DOS ESTILOS DE TEMA ##############################################################################################################################
+*/
+
+.app.light .archived-task{
+    text-shadow: 0px 0px 0px var(--color-04);
+}

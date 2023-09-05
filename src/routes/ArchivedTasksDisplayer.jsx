@@ -18,11 +18,11 @@ function ArchivedTasksDisplayer(){
 
     function handleClickDay(_day){
         return navigate(`/archived-tasks/${_day.replace(/\//g, "-")}`)
-        // let a = JSON.parse(localStorage.getItem('archivedTasks'))[_day]
-        // if(a){
-        //     setSuperTasks([...a])
-        //     setSelectedDay(formatDay(_day))
-        // }
+        let a = JSON.parse(localStorage.getItem('archivedTasks'))[_day]
+        if(a){
+            setSuperTasks([...a])
+            setSelectedDay(formatDay(_day))
+        }
     }
 
 
