@@ -96,7 +96,7 @@ function ArchivedTasksDisplayer(){
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 export default ArchivedTasksDisplayer;

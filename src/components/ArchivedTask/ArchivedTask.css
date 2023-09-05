@@ -37,6 +37,7 @@
 .archived-task h3{
     font-weight: 500;
     font-size: 1.00em;
+    opacity: 60%;
 }
 
 .archived-task p{

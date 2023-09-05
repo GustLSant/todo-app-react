@@ -30,7 +30,7 @@ function ArchivedTask(props) {
                 }
             </div>
         </div>
-    );
+    )
 }
 
 ArchivedTask.propTypes = {

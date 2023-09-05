@@ -58,7 +58,7 @@ function ArchivedTasksContainer() {
                 }
             </div> 
         </div>
-    );
+    )
 }
 
 export default ArchivedTasksContainer;
