@@ -6,7 +6,6 @@ import { IoCheckmarkCircle } from 'react-icons/io5'
 
 function ArchivedTask(props){
     const selfRef = React.useRef(null)
-
     
     return (
         <div className={`archived-task ${props.id} ${(props.isEditing)?'editing':''}`} ref={selfRef} onClick={()=>{props.onClick(props.id, selfRef.current)}}>

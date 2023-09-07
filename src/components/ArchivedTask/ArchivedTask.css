@@ -25,7 +25,7 @@
 .archived-task.editing{
     color: var(--color-alert-01);
     box-shadow: 4px 4px 4px transparent, inset 0 0 6px var(--color-alert-01);
-    text-shadow: 0px 0px 3px var(--color-alert-01);
+    text-shadow: 0px 0px 0px var(--color-alert-01);
 }
 .archived-task.editing:hover{
     cursor: pointer;

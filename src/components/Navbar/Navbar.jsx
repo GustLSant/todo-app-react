@@ -103,7 +103,7 @@ function Navbar(props) {
 
 
     return (
-        <div className={`navbar ${(active)?'active':''}`} onTouchStart={(event)=>{handleRetract(event)}} onClick={(event)=>{handleRetract(event)}}>
+        <div className={`navbar ${(active)?'active':''}`}  onClick={(event)=>{handleRetract(event)}}>
             <div className='navbar__content-container' ref={contentContainerRef}>
                 <div className="navbar__header">
                     <div className='navbar-header__logo' onClick={handleClickLogo}>

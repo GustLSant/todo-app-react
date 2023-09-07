@@ -19,7 +19,6 @@
 @media (max-width: 500px){
     .navbar.active{
         width: 100vw;
-        right: 0px;
         pointer-events: auto;
         backdrop-filter: blur(2px);
     }

@@ -27,7 +27,7 @@ function ArchivedTasksDisplayer(){
     }
 
 
-    function handleClickDay(_day){
+    function handleClickDay(_day, _dayIdx){
         if(!isEditing){
             return navigate(`/archived-tasks/${_day.replace(/\//g, "-")}`)
         }
@@ -40,7 +40,8 @@ function ArchivedTasksDisplayer(){
                 }
             })
             
-            setDays(newDays)
+            document.getElementsByClassName('at__day')[_dayIdx].classList.add('been-deleted')
+            setTimeout(()=>{setDays(newDays)}, 400)
         }
     }
 
@@ -113,9 +114,9 @@ function ArchivedTasksDisplayer(){
             
             <div className="at-displayer__days-container">
                 {
-                    days.map((day, id)=>{
+                    days.map((day, idx)=>{
                         return(
-                            <div key={id} className={`at__day fade-in-top ${(isEditing) ? 'editing' : ''}`} onClick={()=>{handleClickDay(day)}}>{formatDay(day)}</div>
+                            <div key={idx} className={`at__day fade-in-top ${(isEditing) ? 'editing' : ''} ${day}`} onClick={()=>{handleClickDay(day, idx)}}>{formatDay(day)}</div>
                         )
                     })
                 }
