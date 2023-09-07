@@ -16,6 +16,7 @@
     flex-wrap: wrap;
     padding-bottom: 25px;
     padding-right: 10px;
+    scroll-behavior: smooth;
 }
 
 .tasks-container > div > p{

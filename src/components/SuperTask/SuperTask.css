@@ -23,11 +23,6 @@
     box-shadow: 4px 4px 4px transparent, inset 0 0 6px var(--color-04);
     animation-name: superTaskFadeIn, superTaskDone;
 }
-.super-task.been-deleted{
-    animation-name: BeenDeleted;
-    animation-duration: var(--anim-duration);
-    animation-fill-mode: forwards;
-}
 
 .super-task__header{
     display: flex;
@@ -110,21 +105,6 @@
     100% {
         opacity: 100%;
         transform: translateY(0px);
-    }
-}
-
-/* 
-### EFEITOS DE FADE-OUT #########################################################################################################################################
-*/
-
-@keyframes BeenDeleted {
-    0%{
-        opacity: 100%;
-        transform: translateY(0px);
-    }
-    100%{
-        opacity: 0%;
-        transform: translateY(20px);
     }
 }
 

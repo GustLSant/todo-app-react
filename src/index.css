@@ -77,6 +77,12 @@ textarea:enabled{
   animation-fill-mode: forwards;
 }
 
+.been-deleted{
+  animation-name: BeenDeleted !important;
+  animation-duration: var(--anim-duration) !important;
+  animation-fill-mode: forwards !important;
+}
+
 @keyframes FadeInTop {
   0% {
     opacity: 0%;
@@ -107,5 +113,16 @@ textarea:enabled{
   100% {
     opacity: 100%;
     transform: translateX(0px);
+  }
+}
+
+@keyframes BeenDeleted {
+  0%{
+      opacity: 100%;
+      transform: translateY(0px);
+  }
+  100%{
+      opacity: 0%;
+      transform: translateY(20px);
   }
 }

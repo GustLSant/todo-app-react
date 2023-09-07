@@ -4,27 +4,37 @@ import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import ArchivedTask from '../ArchivedTask/ArchivedTask'
 import Button01 from '../Button01/Button01'
-import { IoArrowUndoOutline } from 'react-icons/io5'
-
+import { 
+    IoCheckmarkCircleOutline, 
+    IoSettingsOutline,
+    IoArrowUndoOutline,
+} from 'react-icons/io5'
 
 
 function ArchivedTasksContainer() {
     const { day } = useParams()
     const [superTasks, setSuperTasks] = React.useState([])
     const [selectedDay, setSelectedDay] = React.useState('')
+    const [isEditing, setIsEditing] = React.useState(false)
     const navigate = useNavigate()
+    const buttonSize = '15px'
+    const buttonIconSize = '18px'
+    const dayWithBars = day.replace(/-/g, "/")
 
 
     React.useEffect(()=>{
-        let dayWithBars = day.replace(/-/g, "/")
+        getSuperTasksFromLS()
+    }, [])
 
+
+    function getSuperTasksFromLS(){
         let tasks = JSON.parse(localStorage.getItem('archivedTasks'))[dayWithBars]
         
         if(tasks){
             setSuperTasks([...tasks])
             setSelectedDay(formatDay(dayWithBars))
         }
-    }, [])
+    }
 
 
     function formatDay(_str){
@@ -43,16 +53,82 @@ function ArchivedTasksContainer() {
     }
 
 
+    function handleClickSaveChanges(){
+        setIsEditing(false)
+
+        const LSObject = JSON.parse(localStorage.getItem('archivedTasks'))
+        
+        const newLSObject = {}
+
+        Object.keys(LSObject).forEach((_day)=>{
+            if(_day === dayWithBars){
+                newLSObject[dayWithBars] = superTasks
+            }
+            else{
+                newLSObject[_day] = LSObject[_day]
+            }
+        })
+
+        // Array.from(document.getElementsByClassName('archived-task')).forEach((element)=>{
+        //     element.classList.add('been-deleted')
+        // })
+
+        setTimeout(()=>{
+            localStorage.setItem('archivedTasks', JSON.stringify(newLSObject))
+        }, 400) //125ms eh o tempo de animacao padrao definido como variavel no index.css
+    }
+
+
+    function handleClickCancelChanges(){
+        setIsEditing(false)
+        getSuperTasksFromLS()
+    }
+
+
+    function handleClickTask(_taskId, _element){
+        if(isEditing){
+            const newSuperTasks = []
+
+            superTasks.forEach((task)=>{
+                if(task.id !== _taskId){
+                    newSuperTasks.push(task)
+                }
+            })
+
+            _element.classList.add('been-deleted')
+            setTimeout(()=>{setSuperTasks(newSuperTasks)}, 400)
+        }
+    }
+
     return (
         <div className="at-container">
-            <Button01 label={'Return'} icon={<IoArrowUndoOutline size={'1.4em'} />} onClick={handleClickReturnTasksDisplayer} />
+            <div className="at-container__buttons-container">
+                <Button01 label={'Return'} icon={<IoArrowUndoOutline size={buttonIconSize} />} onClick={handleClickReturnTasksDisplayer} />
+                <div className="at-buttons-container__buttons-edit">
+                    {
+                        (!isEditing) ? 
+                        [
+                            <Button01 key={0} label='Edit' onClick={()=>{if(superTasks.length>0){setIsEditing(true)}}} icon={<IoSettingsOutline size={buttonIconSize} />} size={buttonSize}  />
+                        ]
+                            :
+                        [
+                            <Button01 key={1} label={'Save Changes'}    onClick={handleClickSaveChanges}   icon={<IoCheckmarkCircleOutline size={buttonIconSize} />} size={buttonSize} />,
+                            <Button01 key={2} label={'Cancel Changes'}  onClick={handleClickCancelChanges} icon={<IoArrowUndoOutline size={buttonIconSize} />} size={buttonSize} />
+                        ]
+                    }
+                </div>
+            </div>
+
             <h2>{selectedDay}</h2>
+
+            {(isEditing && <p className='at__edit-instructions fade-in-left'>Click on the task you want to remove</p>)}
+            {(superTasks.length === 0) ? <p className='fade-in-left'>There&lsquo;s nothing saved from this date {day}</p> : ''}
 
             <div className="at-container__tasks-container">
                 {
-                    superTasks.map((task, id)=>{
+                    superTasks.map((task, idx)=>{
                         return(
-                            <ArchivedTask key={id} title={task.title} stepTasks={task.stepTasks} />
+                            <ArchivedTask key={idx} title={task.title} stepTasks={task.stepTasks} isEditing={isEditing} id={task.id} onClick={handleClickTask} />
                         )
                     })
                 }

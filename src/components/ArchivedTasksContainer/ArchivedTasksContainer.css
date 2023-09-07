@@ -9,7 +9,7 @@
     background-color: var(--color-01);
 
     animation-name: FadeInTop;
-    animation-duration: 0.3s;
+    animation-duration: var(--anim-duration-02);
 }
 
 .at-container__tasks-container{
@@ -20,4 +20,27 @@
     gap: 20px;
     overflow-y: auto;
     padding-right: 10px;
+}
+
+.at-container__buttons-container{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.at-buttons-container__buttons-edit{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.at-buttons-container__buttons-edit .button-01{
+    animation-name: FadeInRight;
+    animation-duration: var(--anim-duration-02);
+}
+
+.at-container h2{
+    font-weight: normal;
 }

@@ -109,7 +109,7 @@ function ArchivedTasksDisplayer(){
                 </div>
             </div>
 
-            {(isEditing && <p className='at__edit-instructions fade-in-left'>Click the day you want to remove</p>)}
+            {(isEditing && <p className='at__edit-instructions fade-in-left'>Click on the day you want to remove</p>)}
             
             <div className="at-displayer__days-container">
                 {

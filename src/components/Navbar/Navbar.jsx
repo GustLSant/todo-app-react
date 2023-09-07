@@ -20,7 +20,8 @@ function Navbar(props) {
         'Wednesday',
         'Thursday',
         'Friday',
-        'Saturday'
+        'Saturday',
+        'Others'
     ]
 
 

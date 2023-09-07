@@ -1,9 +1,7 @@
 A fazer:
-- adicionar um dia chamado 'Others'
 - no mobile, click pra fechara navbar ta atravessando e afetando tbm o botao de arquivar tasks
-- poder excluir tasks arquivadas
-- poder excluir dias da secao ArchivedTasks
 - colocar cor padrao para o textarea desativado pq no iphone fica mt claro (????)
+- adicionar efeito de been deleted nos dias arquivados
 
 
 
@@ -41,7 +39,7 @@ Concluidas:
 - logo da home fica mt embaixo no mobile
 - resolucao menor que 313px o botao do navbar fica deslocado
 - mudar todos os estilos de tema para seus respectivos .css
-
-
+- poder excluir dias da secao ArchivedTasks
+- poder excluir tasks arquivadas
 
 
