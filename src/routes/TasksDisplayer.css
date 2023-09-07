@@ -18,6 +18,12 @@
     box-shadow: 0px 4px 4px var(--box-shadow-02);
 }
 
+@media (max-width: 440px){
+    .tasks-displayer__buttons-container{
+        column-gap: 10px;
+    }
+}
+
 .tasks-displayer__instructions-container{
     display: flex;
     align-items: center;
