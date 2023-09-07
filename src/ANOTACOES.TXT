@@ -1,5 +1,4 @@
 A fazer:
-- no mobile, click pra fechara navbar ta atravessando e afetando tbm o botao de arquivar tasks
 - colocar cor padrao para o textarea desativado pq no iphone fica mt claro (????)
 
 
@@ -42,4 +41,6 @@ Concluidas:
 - poder excluir dias da secao ArchivedTasks
 - poder excluir tasks arquivadas
 - adicionar efeito de been deleted nos dias arquivados
+- no mobile, click pra fechara navbar ta atravessando e afetando tbm o botao de arquivar tasks
+
 
