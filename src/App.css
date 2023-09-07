@@ -12,6 +12,8 @@
   --color-04: hsl(25deg 100% 35.29%); /* highlight 2 (principal) hsl(280deg 100% 35.29%) */
   --color-navbar: #d4d3d2; /* navbar */
 
+  --color-05: hsl(25deg 100% 50%);
+
   --color-instructions-text-01: rgba(0,0,0, 0.75);
   --color-alert-01: rgb(255, 50, 0);
 

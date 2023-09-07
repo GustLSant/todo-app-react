@@ -10,7 +10,7 @@
     padding: 15px;
     border-radius: 20px;
     background-color: var(--color-02);
-    box-shadow: 4px 4px 4px transparent, inset 0 0 6px var(--color-04);
+    border: 1px solid var(--color-04);
     text-shadow: 0px 0px 3px var(--color-04);
 
     animation-name: FadeInTop;
@@ -24,7 +24,7 @@
 
 .archived-task.editing{
     color: var(--color-alert-01);
-    box-shadow: 4px 4px 4px transparent, inset 0 0 6px var(--color-alert-01);
+    border: 1px solid var(--color-alert-01);
     text-shadow: 0px 0px 0px var(--color-alert-01);
 }
 .archived-task.editing:hover{
@@ -65,10 +65,11 @@
 
 .app.light .archived-task{
     text-shadow: 0px 0px 0px var(--color-04);
+    border: 1px solid var(--color-05);
 }
 
 .app.light .archived-task.editing{
-    box-shadow: 4px 4px 4px transparent, inset 0 0 6px var(--color-alert-01);
+    border: 1px solid var(--color-alert-01);
     text-shadow: 0px 0px 0px var(--color-alert-01);
 }
 .app.light .archived-task.editing:hover{

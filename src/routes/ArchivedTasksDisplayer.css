@@ -84,7 +84,7 @@
 */
 
 .app.light .at__day:hover{
-    filter: brightness(110%);
+    filter: brightness(105%);
 }
 
 .app.light .at__day{
