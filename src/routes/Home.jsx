@@ -8,7 +8,7 @@ function Home() {
             <p>Click on the <IoMenu /> icon in the top left corner to select a day of the week and start making your lists </p>
             
             <div className='home__logo'>
-                <IoListCircle size={'3.5em'} style={{color: 'var(--color-05)'}} />
+                <IoListCircle size={'3.5em'} />
                 <h1>ToDoApp</h1>
             </div>
 
