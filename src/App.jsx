@@ -13,7 +13,7 @@ import Navbar from './components/Navbar/Navbar'
 
 
 function App() {
-  const [theme, setTheme] = React.useState('light')
+  const [theme, setTheme] = React.useState('dark')
 
   React.useState(()=>{
     const value = localStorage.getItem('theme')
