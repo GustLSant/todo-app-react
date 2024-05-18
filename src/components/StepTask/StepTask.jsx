@@ -9,6 +9,11 @@ function StepTask(props){
 
 
     function handleBodyChange(e){
+        if(e.target.value.includes('\n')){
+            textAreaRef.current.blur(); /* ao pressionar Enter, para de editar */
+            return;
+        }
+
         const newStepTasks = JSON.parse(JSON.stringify(props.stepTasks)); // deep copy
         
         newStepTasks.forEach(element => {
@@ -23,6 +28,7 @@ function StepTask(props){
         textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
     }
     
+
     React.useEffect(()=>{
         textAreaRef.current.style.height = '1.0em'
         textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`

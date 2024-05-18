@@ -21,10 +21,10 @@ function TasksDisplayer() {
             let newTasksData = [...tasks.data] //precisa fazer um deep copy?
             newTasksData.push(
                 {
-                id: getUniqueID(),
-                done: false,
-                title: '',
-                stepTasks: []
+                    id: getUniqueID(),
+                    done: false,
+                    title: '',
+                    stepTasks: []
                 }
             )
             setTasksData(newTasksData)

@@ -52,6 +52,7 @@ export const TasksProvider = ({children}) => {
             })
         }
         
+        // return value.data.length > 0 /* (decrapted, agr fecha de todo jeito) para a navbar poder saber se existe algo nesse dia, e se tiver, fecha sozinha */
     }
 
 

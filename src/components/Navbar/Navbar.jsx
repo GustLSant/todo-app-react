@@ -33,6 +33,7 @@ function Navbar(props) {
 
     function handleClickDayWeek(_day){
         getFromLocalStorage(_day.toLowerCase())
+        setActive(false)
         return navigate("/tasks")
     }
 

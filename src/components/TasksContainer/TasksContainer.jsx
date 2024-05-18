@@ -26,7 +26,7 @@ function TasksContainer() {
                 {
                     tasks.data.map(task => {
                         return(
-                            <SuperTask key={task.id}  id={task.id} done={task.done} title={task.title} stepTasks={task.stepTasks} />
+                            <SuperTask key={task.id}  id={task.id} done={task.done} title={task.title} stepTasks={task.stepTasks} isEditing={task.title === ""} />
                         )
                     })
                 }

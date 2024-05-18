@@ -22,7 +22,7 @@ function SuperTask(props) {
     const [done, setDone] = React.useState(props.done)
     const [title, setTitle] = React.useState(props.title)
     const [stepTasks, setStepTasks] = React.useState(props.stepTasks)
-    const [isEditing, setIsEditing] = React.useState(false)
+    const [isEditing, setIsEditing] = React.useState(props.isEditing)
     const [deleteButtonText, setDeleteButtonText] = React.useState('Delete Task')
     const [cancelButtonText, setCancelButtonText] = React.useState('Cancel Changes')
 
@@ -39,6 +39,7 @@ function SuperTask(props) {
 
     // atualiza o conteudo do text area e redimensiona sua altura de acordo com a demanda
     function handleTitleChange(e){
+        if(e.target.value.includes('\n')){ textAreaRef.current.blur(); return; } /* ao pressionar Enter, para de editar */
         setTitle(e.target.value)
         textAreaRef.current.style.height = '1.0em'
         textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
@@ -155,21 +156,8 @@ function SuperTask(props) {
                         <IoCheckmarkCircleOutline size={'30px'} onClick={handleClickDoneButton} />
                     }
                 </div>
-                <div className="super-task-header__buttons-container">
-                    {
-                        (!isEditing) ? 
-                        [
-                            <Button01 key={0} label='Edit task' onClick={()=>{setIsEditing(true)}} icon={<IoSettingsOutline size={buttonIconSize} />} size={buttonFontSize}  />
-                        ]
-                         :
-                        [
-                            <Button01 key={0} label='Add step task'    onClick={handleClickAddStepTask}   icon={<IoAddCircleOutline        size={buttonIconSize} />} size={buttonFontSize} />,
-                            <Button01 key={1} label={deleteButtonText} onClick={handleClickDeleteTask}    icon={<IoCloseCircleOutline      size={buttonIconSize} />} size={buttonFontSize} isDangerous={(deleteButtonText === 'Confirm Delete')} />,
-                            <Button01 key={2} label='Save changes'     onClick={handleClickSaveChanges}   icon={<IoCheckmarkCircleOutline  size={buttonIconSize} />} size={buttonFontSize} />,
-                            <Button01 key={3} label={cancelButtonText} onClick={handleClickCancelChanges} icon={<IoArrowUndoOutline        size={buttonIconSize} />} size={buttonFontSize} isDangerous={(cancelButtonText === 'Confirm Cancel Changes')} />
-                        ]
-                    }
-                </div>
+                
+                { (!isEditing) && <Button01 key={0} label='Edit task' onClick={()=>{setIsEditing(true)}} icon={<IoSettingsOutline size={buttonIconSize} />} size={buttonFontSize}  /> }
             </div>
 
             <div className="super-task__body">
@@ -187,6 +175,18 @@ function SuperTask(props) {
                 </div>
             </div>
 
+            <div className="super-task-header__buttons-container">
+                {
+                    (isEditing) &&
+                    [
+                        <Button01 key={2} label='Save changes'     onClick={handleClickSaveChanges}   icon={<IoCheckmarkCircleOutline  size={buttonIconSize} />} size={buttonFontSize} />,
+                        <Button01 key={3} label={cancelButtonText} onClick={handleClickCancelChanges} icon={<IoArrowUndoOutline        size={buttonIconSize} />} size={buttonFontSize} isDangerous={(cancelButtonText === 'Confirm Cancel Changes')} />,
+                        <Button01 key={0} label='Add step task'    onClick={handleClickAddStepTask}   icon={<IoAddCircleOutline        size={buttonIconSize} />} size={buttonFontSize} />,
+                        <Button01 key={1} label={deleteButtonText} onClick={handleClickDeleteTask}    icon={<IoCloseCircleOutline      size={buttonIconSize} />} size={buttonFontSize} isDangerous={(deleteButtonText === 'Confirm Delete')} />,
+                    ]
+                }
+            </div>
+
             {
                 (isEditing && <p className="p-edit-instructions">Click &quot;Save changes&quot; or &quot;Cancel changes&quot; to stop editing</p>)
             }
@@ -201,6 +201,7 @@ SuperTask.propTypes = {
     title: PropTypes.string,
     stepTasks: PropTypes.array,
     handleUpdateTask: PropTypes.func,
+    isEditing: PropTypes.bool
 }
 
 export default SuperTask;
