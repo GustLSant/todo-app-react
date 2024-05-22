@@ -144,6 +144,14 @@ function SuperTask(props) {
     }, [done])
 
 
+    React.useEffect(() => {
+        if(isEditing){
+            textAreaRef.current.focus()
+            textAreaRef.current.setSelectionRange(textAreaRef.current.value.length, textAreaRef.current.value.length)
+        }
+    }, [isEditing])
+
+
     return (
         <div className={`super-task ${(done) ? "done" : ""}`} ref={divRef}>
 
