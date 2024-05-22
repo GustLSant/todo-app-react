@@ -17,9 +17,9 @@
   --color-instructions-text-01: rgba(0,0,0, 0.75);
   --color-alert-01: rgb(255, 50, 0);
 
-  --box-shadow-01: rgba(0,0,0, 0.25);
-  --box-shadow-02: rgba(0,0,0, 0.25);
-  --box-shadow-03: rgba(0,0,0, 0.25);
+  --box-shadow-01: rgba(0,0,0, 0.15);
+  --box-shadow-02: rgba(0,0,0, 0.15);
+  --box-shadow-03: rgba(0,0,0, 0.15);
 
   color: rgb(35, 35, 40);
 }
